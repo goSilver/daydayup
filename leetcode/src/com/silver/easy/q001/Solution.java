@@ -28,8 +28,7 @@ public class Solution {
 //    }
 
     /**
-     *
-     * @param nums 数组
+     * @param nums   数组
      * @param target 目标之和
      * @return 下标数组
      */
@@ -39,7 +38,7 @@ public class Solution {
         for (int i = 0; i < len; i++) {
             final Integer value = map.get(nums[i]);
             if (value != null) {
-                return new int[] { value, i };
+                return new int[]{value, i};
             }
             map.put(target - nums[i], i);
         }
