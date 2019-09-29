@@ -11,6 +11,7 @@ public class Solution {
         char[] stack = new char[str.length()+1];
         int top = 1;
 
+        return true;
     }
 
 }
