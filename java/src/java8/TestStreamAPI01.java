@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 /**
  * Java 8 Stream API 练习
- * <p>
+ *
  * Stream 的三个操作步骤：
  * 1、创建Stream
  * 2、中间操作
