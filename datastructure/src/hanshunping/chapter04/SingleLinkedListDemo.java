@@ -14,20 +14,25 @@ public class SingleLinkedListDemo {
         HeroNode hero3 = new HeroNode(3L, "吴用", "智多星");
         HeroNode hero4 = new HeroNode(4L, "林冲", "豹子头");
 
+        HeroNode hero2Copy = new HeroNode(2L, "卢俊义copy", "玉麒麟copy");
+
         // 创建要给链表
         SingleLinkedList singleLinkedList = new SingleLinkedList();
 
-        // 加入
+        // 简单新增
 //        singleLinkedList.add(hero1);
 //        singleLinkedList.add(hero2);
 //        singleLinkedList.add(hero3);
 //        singleLinkedList.add(hero4);
 
-        // 加入
+        // 按排名顺序新增
         singleLinkedList.addByOrder(hero1);
         singleLinkedList.addByOrder(hero4);
         singleLinkedList.addByOrder(hero3);
         singleLinkedList.addByOrder(hero2);
+
+        singleLinkedList.update(hero2Copy);
+        singleLinkedList.remove(hero2Copy);
 
         // 打印链表
         singleLinkedList.list();
@@ -91,6 +96,45 @@ class SingleLinkedList{
     }
 
     /**
+     * 节点的更新方法，根据英雄排名更新指定节点，排名不允许更新
+     *
+     * @param updateNode 带更新的数据
+     */
+    void update(HeroNode updateNode){
+        // 头节点的拷贝，辅助遍历用
+        HeroNode temp = head;
+        while (Objects.nonNull(temp.getNext())) {
+            // 如果匹配到相同排名的英雄，执行更新操作
+            if (Objects.equals(temp.getNo(), updateNode.getNo())) {
+                temp.setName(updateNode.getName());
+                temp.setNickName(updateNode.getNickName());
+                break;
+            }
+            // 指针向后移一位
+            temp = temp.getNext();
+        }
+    }
+
+    /**
+     * 删除操作
+     *
+     * @param remNode 待删除的节点
+     */
+    void remove(HeroNode remNode){
+        // 头节点的拷贝，辅助遍历用
+        HeroNode temp = head;
+        while (Objects.nonNull(temp.getNext())){
+            // 删除排名相同的数据
+            if (Objects.equals(temp.getNext().getNo(), remNode.getNo())) {
+                // 将临时变量的前一个节点的next指向临时变量的next节点即可
+                temp.setNext(temp.getNext().getNext());
+            }
+            // 指针后移
+            temp = temp.getNext();
+        }
+    }
+
+    /**
      * 遍历打印链表节点
      */
     void list(){
@@ -104,7 +148,6 @@ class SingleLinkedList{
         }
     }
 }
-
 
 /**
  * 节点
