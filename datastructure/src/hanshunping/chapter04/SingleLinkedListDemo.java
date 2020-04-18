@@ -36,6 +36,9 @@ public class SingleLinkedListDemo {
 
         // 打印链表
         singleLinkedList.list();
+
+        System.out.println("链表的长度："+singleLinkedList.getLength(singleLinkedList.head));
+        System.out.println("倒数第k个节点："+singleLinkedList.findTheKthFromBottom(singleLinkedList, 0));
     }
 }
 
@@ -46,7 +49,7 @@ class SingleLinkedList{
     /**
      * 链表头结点，不存储具体数据
      */
-    private HeroNode head = new HeroNode(0L, "", "");
+    HeroNode head = new HeroNode(0L, "", "");
 
     /**
      * 往单向链表中添加节点
@@ -132,6 +135,39 @@ class SingleLinkedList{
             // 指针后移
             temp = temp.getNext();
         }
+    }
+
+    /**
+     * 获取链表的长度
+     *
+     * @param head 链表头结点
+     * @return 长度
+     */
+    int getLength(HeroNode head){
+        int length = 0;
+        while (Objects.nonNull(head.getNext())) {
+            length++;
+            head = head.getNext();
+        }
+        return length;
+    }
+
+    /**
+     * 寻找倒数第k个节点
+     *
+     * @param singleLinkedList 链表
+     * @param k k值
+     * @return 倒数第k个节点
+     */
+    HeroNode findTheKthFromBottom(SingleLinkedList singleLinkedList, int k){
+        int length = getLength(singleLinkedList.head);
+        int index = length + 1 - k;
+        HeroNode temp = singleLinkedList.head;
+        while (Objects.nonNull(singleLinkedList.head.getNext()) && index > 0) {
+            temp = temp.getNext();
+            index--;
+        }
+        return temp;
     }
 
     /**
