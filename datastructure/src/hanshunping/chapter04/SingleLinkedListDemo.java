@@ -9,19 +9,25 @@ import java.util.Objects;
 public class SingleLinkedListDemo {
     public static void main(String[] args){
         // 先创建节点
-        HeroNode hero1 = new HeroNode(1, "宋江", "及时雨");
-        HeroNode hero2 = new HeroNode(2, "卢俊义", "玉麒麟");
-        HeroNode hero3 = new HeroNode(3, "吴用", "智多星");
-        HeroNode hero4 = new HeroNode(4, "林冲", "豹子头");
+        HeroNode hero1 = new HeroNode(1L, "宋江", "及时雨");
+        HeroNode hero2 = new HeroNode(2L, "卢俊义", "玉麒麟");
+        HeroNode hero3 = new HeroNode(3L, "吴用", "智多星");
+        HeroNode hero4 = new HeroNode(4L, "林冲", "豹子头");
 
         // 创建要给链表
         SingleLinkedList singleLinkedList = new SingleLinkedList();
 
         // 加入
-        singleLinkedList.add(hero1);
-        singleLinkedList.add(hero2);
-        singleLinkedList.add(hero3);
-        singleLinkedList.add(hero4);
+//        singleLinkedList.add(hero1);
+//        singleLinkedList.add(hero2);
+//        singleLinkedList.add(hero3);
+//        singleLinkedList.add(hero4);
+
+        // 加入
+        singleLinkedList.addByOrder(hero1);
+        singleLinkedList.addByOrder(hero4);
+        singleLinkedList.addByOrder(hero3);
+        singleLinkedList.addByOrder(hero2);
 
         // 打印链表
         singleLinkedList.list();
@@ -35,7 +41,7 @@ class SingleLinkedList{
     /**
      * 链表头结点，不存储具体数据
      */
-    private HeroNode head = new HeroNode(0, "", "");
+    private HeroNode head = new HeroNode(0L, "", "");
 
     /**
      * 往单向链表中添加节点
@@ -49,11 +55,38 @@ class SingleLinkedList{
         // 因为链表的头节点不能改变，故使用一个临时变量辅助遍历
         HeroNode temp = head;
         // 如果节点的下一个节点为空则代表此为尾结点
-        while (!Objects.equals(temp.getNext(), null)) {
+        while (Objects.nonNull(temp.getNext())) {
             // 将临时变量指向下一个节点
             temp = temp.getNext();
         }
         // 将末尾节点的next指向新节点
+        temp.setNext(newNode);
+    }
+
+    /**
+     * 根据英雄排名来按顺序插入
+     *
+     * @param newNode 待新增的节点
+     */
+    void addByOrder(HeroNode newNode){
+        // 取头节点的拷贝作为辅助遍历变量
+        HeroNode temp = head;
+        // 如果临时变量节点的下一个节点不为空则继续遍历
+        while (Objects.nonNull(temp.getNext())){
+            // 如果临时变量节点的下一个节点的排名大于待新增节点，则表示应该新增在此临时变量节点的后面
+            if (temp.getNext().getNo() > newNode.getNo()) {
+                break;
+                // 不允许添加相同排名的英雄
+            } else if (Objects.equals(temp.getNext().getNo(), newNode.getNo())) {
+                System.out.println("已存在排名为：" + newNode.getNo() + " 的好汉，添加失败！");
+                return;
+            }
+            // 临时变量指针往后移一位
+            temp = temp.getNext();
+        }
+        // 新节点的next设置为temp的原next节点
+        newNode.setNext(temp.getNext());
+        // temp的next设置为新节点
         temp.setNext(newNode);
     }
 
@@ -80,7 +113,7 @@ class HeroNode {
     /**
      * 英雄排名
      */
-    private int no;
+    private Long no;
     /**
      * 英雄姓名
      */
@@ -94,17 +127,17 @@ class HeroNode {
      */
     private HeroNode next;
 
-    HeroNode(int no, String name, String nickName) {
+    HeroNode(Long no, String name, String nickName) {
         this.no = no;
         this.name = name;
         this.nickName = nickName;
     }
 
-    public int getNo() {
+    public Long getNo() {
         return no;
     }
 
-    public void setNo(int no) {
+    public void setNo(Long no) {
         this.no = no;
     }
 
