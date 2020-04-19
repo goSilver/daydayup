@@ -31,14 +31,15 @@ public class SingleLinkedListDemo {
         singleLinkedList.addByOrder(hero3);
         singleLinkedList.addByOrder(hero2);
 
-        singleLinkedList.update(hero2Copy);
-        singleLinkedList.remove(hero2Copy);
+//        singleLinkedList.update(hero2Copy);
+//        singleLinkedList.remove(hero2Copy);
+        singleLinkedList.reverse(singleLinkedList.getHead());
 
         // 打印链表
         singleLinkedList.list();
 
-        System.out.println("链表的长度：" + singleLinkedList.getLength(singleLinkedList.head));
-        System.out.println("倒数第k个节点：" + singleLinkedList.findTheKthFromBottom(singleLinkedList, 0));
+//        System.out.println("链表的长度：" + singleLinkedList.getLength(singleLinkedList.getHead()));
+//        System.out.println("倒数第k个节点：" + singleLinkedList.findTheKthFromBottom(singleLinkedList, 0));
     }
 }
 
@@ -49,7 +50,11 @@ class SingleLinkedList {
     /**
      * 链表头结点，不存储具体数据
      */
-    HeroNode head = new HeroNode(0L, "", "");
+    private HeroNode head = new HeroNode(0L, "", "");
+
+    public HeroNode getHead() {
+        return head;
+    }
 
     /**
      * 往单向链表中添加节点
@@ -182,15 +187,16 @@ class SingleLinkedList {
         HeroNode newHead = new HeroNode(0L, "", "");
         // 定义一个临时节点，记录即将遍历的下一个节点
         HeroNode next;
-        while (Objects.nonNull(oldHead.getNext())) {
+        HeroNode current = oldHead.getNext();
+        while (Objects.nonNull(current)) {
             // 记录即将遍历的下一个节点
-            next = oldHead.getNext();
+            next = current.getNext();
             // 将newHead的下一个节点设置为当前节点的next
-            oldHead.setNext(newHead.getNext());
+            current.setNext(newHead.getNext());
             // 将newHead的next设置为当前节点
-            newHead.setNext(oldHead);
+            newHead.setNext(current);
             // 恢复遍历指针
-            oldHead = next;
+            current = next;
         }
         // 修改链表头结点
         head = newHead;
