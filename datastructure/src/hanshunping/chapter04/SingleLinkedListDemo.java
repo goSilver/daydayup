@@ -1,6 +1,7 @@
 package hanshunping.chapter04;
 
 import java.util.Objects;
+import java.util.Stack;
 
 /**
  * @author csh
@@ -33,10 +34,11 @@ public class SingleLinkedListDemo {
 
 //        singleLinkedList.update(hero2Copy);
 //        singleLinkedList.remove(hero2Copy);
-        singleLinkedList.reverse(singleLinkedList.getHead());
+//        singleLinkedList.reverse(singleLinkedList.getHead());
 
         // 打印链表
-        singleLinkedList.list();
+//        singleLinkedList.list();
+        singleLinkedList.reversePrint();
 
 //        System.out.println("链表的长度：" + singleLinkedList.getLength(singleLinkedList.getHead()));
 //        System.out.println("倒数第k个节点：" + singleLinkedList.findTheKthFromBottom(singleLinkedList, 0));
@@ -187,6 +189,7 @@ class SingleLinkedList {
         HeroNode newHead = new HeroNode(0L, "", "");
         // 定义一个临时节点，记录即将遍历的下一个节点
         HeroNode next;
+        // 跳过头节点
         HeroNode current = oldHead.getNext();
         while (Objects.nonNull(current)) {
             // 记录即将遍历的下一个节点
@@ -200,6 +203,25 @@ class SingleLinkedList {
         }
         // 修改链表头结点
         head = newHead;
+    }
+
+    /**
+     * 逆向打印链表
+     * 思路：
+     * 1、先反转链表，再打印链表，缺点是会破坏原链表的结构
+     * 2、利用栈数据结构先进后出的特性来辅助实现
+     * 这里用栈来实现
+     */
+    void reversePrint() {
+        Stack<HeroNode> nodeStack = new Stack<>();
+        HeroNode current = head.getNext();
+        while (Objects.nonNull(current)) {
+            nodeStack.push(current);
+            current = current.getNext();
+        }
+        while (!nodeStack.isEmpty()) {
+            System.out.println(nodeStack.pop());
+        }
     }
 
     /**
