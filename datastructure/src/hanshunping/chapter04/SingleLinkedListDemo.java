@@ -7,7 +7,7 @@ import java.util.Objects;
  * @date 2020/4/18 14:23
  */
 public class SingleLinkedListDemo {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         // 先创建节点
         HeroNode hero1 = new HeroNode(1L, "宋江", "及时雨");
         HeroNode hero2 = new HeroNode(2L, "卢俊义", "玉麒麟");
@@ -37,15 +37,15 @@ public class SingleLinkedListDemo {
         // 打印链表
         singleLinkedList.list();
 
-        System.out.println("链表的长度："+singleLinkedList.getLength(singleLinkedList.head));
-        System.out.println("倒数第k个节点："+singleLinkedList.findTheKthFromBottom(singleLinkedList, 0));
+        System.out.println("链表的长度：" + singleLinkedList.getLength(singleLinkedList.head));
+        System.out.println("倒数第k个节点：" + singleLinkedList.findTheKthFromBottom(singleLinkedList, 0));
     }
 }
 
 /**
  * 单向链表实现
  */
-class SingleLinkedList{
+class SingleLinkedList {
     /**
      * 链表头结点，不存储具体数据
      */
@@ -76,11 +76,11 @@ class SingleLinkedList{
      *
      * @param newNode 待新增的节点
      */
-    void addByOrder(HeroNode newNode){
+    void addByOrder(HeroNode newNode) {
         // 取头节点的拷贝作为辅助遍历变量
         HeroNode temp = head;
         // 如果临时变量节点的下一个节点不为空则继续遍历
-        while (Objects.nonNull(temp.getNext())){
+        while (Objects.nonNull(temp.getNext())) {
             // 如果临时变量节点的下一个节点的排名大于待新增节点，则表示应该新增在此临时变量节点的后面
             if (temp.getNext().getNo() > newNode.getNo()) {
                 break;
@@ -103,7 +103,7 @@ class SingleLinkedList{
      *
      * @param updateNode 带更新的数据
      */
-    void update(HeroNode updateNode){
+    void update(HeroNode updateNode) {
         // 头节点的拷贝，辅助遍历用
         HeroNode temp = head;
         while (Objects.nonNull(temp.getNext())) {
@@ -123,10 +123,10 @@ class SingleLinkedList{
      *
      * @param remNode 待删除的节点
      */
-    void remove(HeroNode remNode){
+    void remove(HeroNode remNode) {
         // 头节点的拷贝，辅助遍历用
         HeroNode temp = head;
-        while (Objects.nonNull(temp.getNext())){
+        while (Objects.nonNull(temp.getNext())) {
             // 删除排名相同的数据
             if (Objects.equals(temp.getNext().getNo(), remNode.getNo())) {
                 // 将临时变量的前一个节点的next指向临时变量的next节点即可
@@ -143,7 +143,7 @@ class SingleLinkedList{
      * @param head 链表头结点
      * @return 长度
      */
-    int getLength(HeroNode head){
+    int getLength(HeroNode head) {
         int length = 0;
         while (Objects.nonNull(head.getNext())) {
             length++;
@@ -156,10 +156,10 @@ class SingleLinkedList{
      * 寻找倒数第k个节点
      *
      * @param singleLinkedList 链表
-     * @param k k值
+     * @param k                k值
      * @return 倒数第k个节点
      */
-    HeroNode findTheKthFromBottom(SingleLinkedList singleLinkedList, int k){
+    HeroNode findTheKthFromBottom(SingleLinkedList singleLinkedList, int k) {
         int length = getLength(singleLinkedList.head);
         int index = length + 1 - k;
         HeroNode temp = singleLinkedList.head;
@@ -171,9 +171,35 @@ class SingleLinkedList{
     }
 
     /**
+     * 反转链表
+     * 思路：
+     * 定义一个新的头结点newHead，遍历链表，依次将遍历的节点取出放到newHead的后面即可
+     *
+     * @param oldHead 链表的旧头结点
+     */
+    void reverse(HeroNode oldHead) {
+        // 定义一个新的头结点
+        HeroNode newHead = new HeroNode(0L, "", "");
+        // 定义一个临时节点，记录即将遍历的下一个节点
+        HeroNode next;
+        while (Objects.nonNull(oldHead.getNext())) {
+            // 记录即将遍历的下一个节点
+            next = oldHead.getNext();
+            // 将newHead的下一个节点设置为当前节点的next
+            oldHead.setNext(newHead.getNext());
+            // 将newHead的next设置为当前节点
+            newHead.setNext(oldHead);
+            // 恢复遍历指针
+            oldHead = next;
+        }
+        // 修改链表头结点
+        head = newHead;
+    }
+
+    /**
      * 遍历打印链表节点
      */
-    void list(){
+    void list() {
         // 链表头结点不允许改变，使用临时变量辅助遍历
         HeroNode temp = head;
         // 如果临时变量的next指针不为空表示链表不为空且未到尾结点
