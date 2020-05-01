@@ -1,4 +1,4 @@
-package hanshunping.chapter04;
+package hanshunping.chapter04.singlelinkedlist;
 
 /**
  * 节点

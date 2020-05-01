@@ -1,4 +1,4 @@
-package hanshunping.chapter04;
+package hanshunping.chapter04.singlelinkedlist;
 
 import java.util.Objects;
 import java.util.Stack;

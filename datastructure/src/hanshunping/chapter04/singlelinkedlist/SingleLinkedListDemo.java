@@ -1,7 +1,4 @@
-package hanshunping.chapter04;
-
-import java.util.Objects;
-import java.util.Stack;
+package hanshunping.chapter04.singlelinkedlist;
 
 /**
  * @author csh
