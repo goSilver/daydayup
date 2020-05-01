@@ -26,7 +26,7 @@ public class Main {
         doubleList.addByOrder(node3);
         doubleList.addByOrder(node2);
 
-        doubleList.remove(node1);
+        doubleList.remove(node4);
         // 打印
         doubleList.print();
 

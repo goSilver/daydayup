@@ -76,13 +76,17 @@ public class DoubleDirectionLinkedList {
      * 删除节点
      *
      * @param rmNode 待删除节点
+     *
      */
     void remove(DoubleDirectionHeroNode rmNode) {
         // 头结点
         DoubleDirectionHeroNode current = head;
         while (Objects.nonNull(current.getNextNode())) {
             if (Objects.equals(current.getNextNode().getNo(), rmNode.getNo())) {
-                current.getNextNode().getNextNode().setPreNode(current);
+                // 如果是删除最后一个节点，则不用设置后置节点的指针
+                if (Objects.nonNull(current.getNextNode().getNextNode())) {
+                    current.getNextNode().getNextNode().setPreNode(current);
+                }
                 current.setNextNode(current.getNextNode().getNextNode());
                 break;
             }
