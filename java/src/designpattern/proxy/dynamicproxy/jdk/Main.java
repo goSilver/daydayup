@@ -1,4 +1,4 @@
-package designpattern.proxy.dynamicproxy;
+package designpattern.proxy.dynamicproxy.jdk;
 
 import designpattern.proxy.staticproxy.RealSubject;
 import designpattern.proxy.staticproxy.Subject;
