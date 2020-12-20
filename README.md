@@ -1,6 +1,27 @@
-# daydayup
-日常练习，包括数据结构、算法等一些简单代码
+### 后续需要整理的知识点
+#### 1、框架
+- Spring事务相关和实现原理
+- MyBatis
+- 
 
-datastructure:这个下面是一些练习数据结构的代码；
+#### 2、中间件
+- dubbo
+- rocket MQ
+- 
 
-leetcode：这个下面是练习LeetCode的代码；
+#### 3、数据库
+- 锁
+- SQL优化
+- 分库分表
+
+#### 4、缓存
+- redis
+- 分布式锁
+
+#### 5、JVM和Java SE
+
+#### 6、Linux
+
+#### 7、计算机网络
+
+#### 8、leetCode
