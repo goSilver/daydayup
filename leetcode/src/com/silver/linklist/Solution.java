@@ -12,15 +12,20 @@ public class Solution {
         ListNode a = new ListNode(1);
         ListNode b = new ListNode(2);
         ListNode c = new ListNode(3);
+        ListNode d = new ListNode(4);
+        ListNode e = new ListNode(5);
         a.next = b;
         b.next = c;
+        c.next = d;
+        d.next = e;
         ListNode cur = a;
         while (cur != null) {
             System.out.println("before:" + cur.val);
             cur = cur.next;
         }
 //        cur = reverseAll(a);
-        cur = reverseN(a,2);
+//        cur = reverseN(a, 2);
+        cur = reverseBetween(a, 2,4);
         while (cur != null) {
             System.out.println("after:" + cur.val);
             cur = cur.next;
@@ -43,6 +48,7 @@ public class Solution {
 
     // 后驱节点
     private static ListNode successor;
+
     /**
      * 反转链表的前n个节点
      *
@@ -58,7 +64,7 @@ public class Solution {
             return head;
         }
         // 递归反转前n-1个节点
-        ListNode last = reverseN(head.next, n-1);
+        ListNode last = reverseN(head.next, n - 1);
         // 反转
         head.next.next = head;
         // 链接新旧两个链表
@@ -66,4 +72,21 @@ public class Solution {
         return last;
     }
 
+    /**
+     * 反转链表的一部分
+     *
+     * @param head 原链表头节点
+     * @param m    需要反转的部分的起始节点下标
+     * @param n    需要反转的部分的结束节点下标
+     * @return 反转后链表的头节点
+     */
+    private static ListNode reverseBetween(ListNode head, int m, int n) {
+        // base case
+        if (m == 1) {
+            return reverseN(head, n);
+        }
+        // 前进到反转的起点触发 base case
+        head.next = reverseBetween(head.next, m - 1, n - 1);
+        return head;
+    }
 }
