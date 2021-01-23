@@ -7,7 +7,7 @@ package com.silver.tree;
 public class Sort {
     public static void main(String[] args) {
 
-        int[] arr = new int[]{2, 6, 7, 8, 4, 1};
+        int[] arr = new int[]{2, 6, 7, 8, 4, 1, 5};
         Sort sort = new Sort();
 
         sort.quickSort(arr, 0, 5);
@@ -29,7 +29,7 @@ public class Sort {
         }
         // 通过交换元素构建分界点 p
         int p = partition(nums, lo, hi);
-        System.out.println("分界点index：" + p);
+
         quickSort(nums, lo, p - 1);
         quickSort(nums, p + 1, hi);
     }
