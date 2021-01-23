@@ -19,7 +19,8 @@ public class Solution {
             System.out.println("before:" + cur.val);
             cur = cur.next;
         }
-        cur = reverseAll(a);
+//        cur = reverseAll(a);
+        cur = reverseN(a,2);
         while (cur != null) {
             System.out.println("after:" + cur.val);
             cur = cur.next;
@@ -40,9 +41,23 @@ public class Solution {
         return last;
     }
 
-    private static ListNode reverseK(ListNode head) {
-
-        return null;
+    private static ListNode successor;
+    /**
+     * 反转链表的前n个节点
+     *
+     * @param head 最初的头节点
+     * @param n    要反转的节点的个数
+     * @return 反转后的头节点
+     */
+    private static ListNode reverseN(ListNode head, int n) {
+        if (n == 1) {
+            successor = head.next;
+            return head;
+        }
+        ListNode last = reverseN(head.next, n-1);
+        head.next.next = head;
+        head.next = successor;
+        return last;
     }
 
 }
