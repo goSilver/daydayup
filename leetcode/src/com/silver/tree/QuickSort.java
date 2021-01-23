@@ -1,6 +1,8 @@
 package com.silver.tree;
 
 /**
+ * 根据遍历树的思想实现快速排序
+ *
  * @author csh
  * @date 2021/1/23
  */
