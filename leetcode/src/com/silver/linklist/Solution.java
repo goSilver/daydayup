@@ -51,12 +51,17 @@ public class Solution {
      * @return 反转后的头节点
      */
     private static ListNode reverseN(ListNode head, int n) {
+        // base case
         if (n == 1) {
+            // 记录后驱节点
             successor = head.next;
             return head;
         }
+        // 递归反转前n-1个节点
         ListNode last = reverseN(head.next, n-1);
+        // 反转
         head.next.next = head;
+        // 链接新旧两个链表
         head.next = successor;
         return last;
     }
