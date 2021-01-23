@@ -4,11 +4,11 @@ package com.silver.tree;
  * @author csh
  * @date 2021/1/23
  */
-public class Sort {
+public class QuickSort {
     public static void main(String[] args) {
 
         int[] arr = new int[]{2, 6, 7, 8, 4, 1, 5};
-        Sort sort = new Sort();
+        QuickSort sort = new QuickSort();
 
         sort.quickSort(arr, 0, 5);
         for (int i : arr) {
