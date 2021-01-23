@@ -41,6 +41,7 @@ public class Solution {
         return last;
     }
 
+    // 后驱节点
     private static ListNode successor;
     /**
      * 反转链表的前n个节点
