@@ -14,6 +14,10 @@ public class TreeNode {
 
     private TreeNode next;
 
+    public TreeNode(int val){
+        this.val = val;
+    }
+
     public int getVal() {
         return val;
     }
