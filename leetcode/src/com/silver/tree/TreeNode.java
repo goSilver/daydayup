@@ -12,6 +12,8 @@ public class TreeNode {
 
     private TreeNode right;
 
+    private TreeNode next;
+
     public int getVal() {
         return val;
     }
@@ -36,4 +38,11 @@ public class TreeNode {
         this.right = right;
     }
 
+    public TreeNode getNext() {
+        return next;
+    }
+
+    public void setNext(TreeNode next) {
+        this.next = next;
+    }
 }
