@@ -36,6 +36,7 @@ public class KthSmallest {
      * @param k 关键字
      */
     private void doFind(TreeNode root, int k) {
+        // base case
         if (k == 0) return;
 
         // 前序遍历
