@@ -88,4 +88,30 @@ public class SlowAndFastPointer {
         return slow;
     }
 
+    /**
+     * 寻找倒数第k个节点
+     *
+     * @param head 头节点
+     * @param k    k值
+     * @return 目标节点
+     */
+    private ListNode findKthFromLast(ListNode head, int k) {
+        // 初始化快慢指针
+        ListNode fast, slow;
+        fast = slow = head;
+
+        // 快指针先走k个节点
+        while (k-- > 0) {
+            fast = fast.next;
+        }
+
+        // 遍历链表，当快指针到达末尾时，慢指针即是倒数第k个节点
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow;
+    }
+
 }
