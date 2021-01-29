@@ -65,4 +65,27 @@ public class SlowAndFastPointer {
         return slow;
     }
 
+    /**
+     * 寻找链表中点
+     * 当链表的长度是奇数时，slow 恰巧停在中点位置；
+     * 如果长度是偶数，slow 最终的位置是中间偏右；
+     *
+     * @param head
+     * @return
+     */
+    private ListNode findMiddle(ListNode head) {
+        // 初始化快慢指针
+        ListNode fast, slow;
+        fast = slow = head;
+
+        // 遍历链表
+        while (fast != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        // 当快指针走到链表末尾，慢指针则刚好在中点
+        return slow;
+    }
+
 }
