@@ -17,6 +17,13 @@ public class SlidingWindow {
         System.out.println(s);
     }
 
+    /**
+     * 最小覆盖字串
+     *
+     * @param s 字符串s
+     * @param t 字符串t
+     * @return 最小覆盖字串
+     */
     private String minWindow(String s, String t) {
         HashMap<Character, Integer> need = new HashMap<>();
         HashMap<Character, Integer> window = new HashMap<>();
