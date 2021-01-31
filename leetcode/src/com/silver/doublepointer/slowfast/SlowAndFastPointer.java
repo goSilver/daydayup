@@ -1,6 +1,6 @@
 package com.silver.doublepointer.slowfast;
 
-import com.silver.medium.q002.ListNode;
+import com.silver.temp.ListNode;
 
 /**
  * 快慢指针的常见算法
