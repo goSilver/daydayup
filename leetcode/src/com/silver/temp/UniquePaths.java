@@ -19,8 +19,10 @@ public class UniquePaths {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (i == 0 || j == 0) {
+                    // 第一行、第一列的位置，都只有一种路径
                     arr[i][j] = 1;
                 } else {
+                    // 非第一行、第一列的位置的路径数，等于左侧坐标和上方坐标的路径种数之和
                     arr[i][j] = arr[i - 1][j] + arr[j][i - 1];
                 }
             }
