@@ -8,7 +8,12 @@ package com.silver.tree;
  */
 public class BuildByOrder {
     public static void main(String[] args) {
+        int[] preOrder=new int[]{3,9,20,15,7};
+        int[] inOrder = new int[]{9,3,15,20,7};
+        BuildByOrder q = new BuildByOrder();
+        TreeNode treeNode = q.buildByPreIn(preOrder, inOrder);
 
+        System.out.println(treeNode.getVal());
     }
 
     private TreeNode buildByPreIn(int[] order1, int[] order2) {
