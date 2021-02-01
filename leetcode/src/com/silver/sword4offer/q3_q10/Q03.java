@@ -1,8 +1,5 @@
 package com.silver.sword4offer.q3_q10;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Q03；寻找数组中重复的数字
  *
@@ -11,17 +8,15 @@ import java.util.List;
  */
 public class Q03 {
 
-    private List<Integer> findRepeatNumber(int[] arr) {
-
-        List<Integer> res = new ArrayList<>();
+    private int findRepeatNumber(int[] arr) {
 
         for (int i = 0; i < arr.length; i++) {
             while (arr[i] != i) {
-                if (arr[i] == arr[arr[i]]) res.add(arr[i]);
+                if (arr[i] == arr[arr[i]]) return arr[i];
                 swap(arr, i, arr[i]);
             }
         }
-        return res;
+        return -1;
     }
 
     private void swap(int[] arr, int a, int b) {
