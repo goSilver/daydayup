@@ -1,4 +1,4 @@
-package com.silver.temp;
+package com.silver.dynamic;
 
 /**
  * @author csh
