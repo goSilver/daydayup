@@ -15,8 +15,8 @@ public class Q03 {
      * 故而，如果当前数字与index不相等时，则交换当前位置和当前位置数位置的数，知道相等；
      * 如果当前位置数字与index不相等，且当前位置数字的位置已经存在了一个与index相等的数字，则说明这是一个重复数字。
      *
-     * @param arr
-     * @return
+     * @param arr 数组
+     * @return 重复数字
      */
     public int findRepeatNumber(int[] arr) {
 
