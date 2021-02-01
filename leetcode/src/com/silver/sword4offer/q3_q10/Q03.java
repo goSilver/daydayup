@@ -8,7 +8,7 @@ package com.silver.sword4offer.q3_q10;
  */
 public class Q03 {
 
-    private int findRepeatNumber(int[] arr) {
+    public int findRepeatNumber(int[] arr) {
 
         for (int i = 0; i < arr.length; i++) {
             while (arr[i] != i) {
