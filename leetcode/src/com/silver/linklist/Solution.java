@@ -1,6 +1,6 @@
 package com.silver.linklist;
 
-import com.silver.medium.q002.ListNode;
+import com.silver.temp.ListNode;
 
 /**
  * @author Chen ShaoHua
