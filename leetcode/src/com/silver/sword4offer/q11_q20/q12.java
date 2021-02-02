@@ -3,6 +3,8 @@ package com.silver.sword4offer.q11_q20;
 import java.util.HashSet;
 
 /**
+ * 矩阵中的路径
+ *
  * @author Chen ShaoHua
  * @date 2021/2/2
  */
@@ -18,6 +20,13 @@ public class q12 {
         System.out.println(exist);
     }
 
+    /**
+     * 自己原创的暴力解法（未通过）
+     *
+     * @param board 二维数组
+     * @param word  字符串
+     * @return 是否存在路径
+     */
     public boolean exist(char[][] board, String word) {
         HashSet<Integer> rowSet = new HashSet<>();
         char[] chars = word.toCharArray();
@@ -35,11 +44,9 @@ public class q12 {
                     rowSet.add(i);
                     j = 0;
                     index++;
-                    if (index >= chars.length) return true;
+                    if (index >= chars.length - 1) return true;
                 }
-
             }
-
         }
         return false;
     }
