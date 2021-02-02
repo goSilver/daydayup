@@ -1,7 +1,7 @@
 package com.silver.sword4offer.q3_q10;
 
 
-import com.silver.tree.TreeNode;
+import com.silver.labuladong.tree.TreeNode;
 
 /**
  * @author Chen ShaoHua

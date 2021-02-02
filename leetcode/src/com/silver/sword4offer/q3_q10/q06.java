@@ -1,6 +1,6 @@
 package com.silver.sword4offer.q3_q10;
 
-import com.silver.temp.ListNode;
+import com.silver.labuladong.temp.ListNode;
 
 import java.util.Stack;
 
