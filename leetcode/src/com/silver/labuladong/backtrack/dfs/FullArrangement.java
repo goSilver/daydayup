@@ -77,6 +77,7 @@ public class FullArrangement {
     private void myBacktrack(int[] nums, LinkedList<Integer> track) {
         if (track.size() == nums.length) {
             res.add(new LinkedList<>(track));
+            return;
         }
 
         for (int num : nums) {
