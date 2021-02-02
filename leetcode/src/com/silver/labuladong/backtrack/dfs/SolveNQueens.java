@@ -35,7 +35,7 @@ public class SolveNQueens {
      * 结束条件：row 超过 board 的最后一行
      *
      * @param board 棋盘
-     * @param row 起始行
+     * @param row   起始行
      */
     private void backtrack(char[][] board, int row) {
         // 触发结束条件
@@ -80,8 +80,8 @@ public class SolveNQueens {
      * 检查如果在row、col放置一个皇后是否合法
      *
      * @param board 棋盘
-     * @param row 行
-     * @param col 列
+     * @param row   行
+     * @param col   列
      * @return 是否合法
      */
     private boolean isValid(char[][] board, int row, int col) {
