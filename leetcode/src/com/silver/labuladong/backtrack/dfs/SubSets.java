@@ -13,6 +13,12 @@ public class SubSets {
 
     private List<List<Integer>> res = new LinkedList<>();
 
+    /**
+     * 寻找所有子集
+     *
+     * @param nums 数组
+     * @return 子集
+     */
     private List<List<Integer>> subSets(int[] nums) {
         LinkedList<Integer> track = new LinkedList<>();
         backtrack(nums, 0, track);
