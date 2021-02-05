@@ -20,6 +20,23 @@ public class q12 {
         System.out.println(exist);
     }
 
+    public boolean exist(char[][] board, String word) {
+        char[] chars = word.toCharArray();
+        return backtrack(board,chars,0);
+    }
+
+    private boolean backtrack(char[][] board, char[] chars, int n) {
+        int index = 0;
+        if (index == chars.length-1) return true;
+
+        int row = board.length;
+        int col = board[0].length;
+        for (int i = 0; i < row; i++) {
+
+        }
+        return false;
+    }
+
     /**
      * 自己原创的暴力解法（未通过）
      *
@@ -27,7 +44,7 @@ public class q12 {
      * @param word  字符串
      * @return 是否存在路径
      */
-    public boolean exist(char[][] board, String word) {
+    public boolean myExist(char[][] board, String word) {
         HashSet<Integer> rowSet = new HashSet<>();
         char[] chars = word.toCharArray();
         int index = 0;
