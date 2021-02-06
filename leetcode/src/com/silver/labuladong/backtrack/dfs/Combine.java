@@ -61,5 +61,6 @@ public class Combine {
             // 撤销选择
             track.removeLast();
         }
+
     }
 }
