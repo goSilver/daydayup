@@ -56,10 +56,12 @@ public class Combine {
         for (int i = start; i <= n; i++) {
             // 执行选择
             track.add(i);
+            System.out.println(i+"执行选择："+track.toString());
             // 回溯
             backtrack(n, k, i + 1, track);
             // 撤销选择
             track.removeLast();
+            System.out.println(i+"撤销选择："+track.toString());
         }
 
     }
