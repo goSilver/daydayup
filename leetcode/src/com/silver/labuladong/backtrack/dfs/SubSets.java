@@ -25,11 +25,24 @@ public class SubSets {
         return res;
     }
 
-    private void backtrack(int[] nums, int start, LinkedList<Integer> track) {
+    /**
+     * 回溯
+     *
+     * @param nums  数组
+     * @param start 起始坐标
+     * @param track 走过的路径
+     */
+    private void backtrack(int[] nums,
+                           int start,
+                           LinkedList<Integer> track) {
         res.add(track);
+        // 从start开始循环
         for (int i = start; i < nums.length; i++) {
+            // 做选择
             track.add(nums[i]);
+            // 回溯
             backtrack(nums, i + 1, track);
+            // 撤销选择
             track.removeLast();
         }
     }
