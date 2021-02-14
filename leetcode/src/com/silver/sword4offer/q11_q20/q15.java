@@ -20,6 +20,5 @@ public class q15 {
             n >>>= 1;
         }
         return res;
-
     }
 }
