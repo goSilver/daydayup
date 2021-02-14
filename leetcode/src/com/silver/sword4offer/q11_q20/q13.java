@@ -10,7 +10,7 @@ public class q13 {
 
     public static void main(String[] args) {
         q13 q = new q13();
-        int res = q.movingCount(16, 8, 4);
+        int res = q.movingCount2(16, 8, 4);
         System.out.println(res);
     }
 
@@ -37,6 +37,7 @@ public class q13 {
         }
         return s;
     }
+
     public int movingCount2(int m, int n, int k) {
         if (k == 0) {
             return 1;
