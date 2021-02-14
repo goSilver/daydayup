@@ -14,12 +14,9 @@ public class q17 {
     }
 
     public int[] printNumbers(int n) {
-        int max = 1;
-        for (int i = 0; i < n; i++) {
-            max *= 10;
-        }
-        int[] res = new int[max-1];
-        for (int i = 0; i < max-1; i++) {
+        int max = (int)Math.pow(10, n) - 1;
+        int[] res = new int[max];
+        for (int i = 0; i < max; i++) {
             res[i] = i +1;
         }
         return res;
