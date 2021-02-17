@@ -11,8 +11,11 @@ import com.silver.labuladong.temp.ListNode;
 public class q25 {
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        // 初始化
         ListNode head = new ListNode(0);
         ListNode cur = head;
+
+        // 循环合并
         while (l1 != null && l2 != null) {
             if (l1.val > l2.val) {
                 cur.next = l2;
@@ -23,6 +26,8 @@ public class q25 {
             }
             cur = cur.next;
         }
+
+        // 合并剩余节点，注意
         cur.next = l1 != null ? l1 : l2;
         return head.next;
     }
