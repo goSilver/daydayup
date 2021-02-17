@@ -39,7 +39,7 @@ public class Solution {
      * @return 反转后的头节点
      */
     private static ListNode reverseAll(ListNode head) {
-        if (head.next == null) return head;
+        if (head == null || head.next == null) return head;
         ListNode last = reverseAll(head.next);
         head.next.next = head;
         head.next = null;
