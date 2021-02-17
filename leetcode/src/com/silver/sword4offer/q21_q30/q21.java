@@ -8,7 +8,29 @@ package com.silver.sword4offer.q21_q30;
  **/
 public class q21 {
     /**
-     * 利用左右指针，双向遍历并交换数字
+     * 力扣上的优雅写法
+     *
+     * @param nums 原始数组
+     * @return 交换奇偶数过后的数组
+     */
+    public int[] exchange2(int[] nums) {
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            if (!isEven(nums[left])) {
+                left++;
+                continue;
+            }
+            if (isEven(nums[right])) {
+                right++;
+                continue;
+            }
+            swap(nums, left, right);
+        }
+        return nums;
+    }
+
+    /**
+     * 利用左右指针，双向遍历并交换数字（自己写的笨解法）
      *
      * @param nums 原始数组
      * @return 交换奇偶数过后的数组
