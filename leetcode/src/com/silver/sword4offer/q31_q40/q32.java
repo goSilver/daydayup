@@ -4,6 +4,7 @@ import com.silver.sword4offer.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -33,6 +34,12 @@ public class q32 {
         }
     }
 
+    /**
+     * 层序遍历
+     *
+     * @param root 根节点
+     * @return 层序
+     */
     public int[] levelOrder(TreeNode root) {
         if(root == null) return new int[0];
         Queue<TreeNode> queue = new LinkedList(){{ add(root); }};
@@ -46,6 +53,29 @@ public class q32 {
         int[] res = new int[ans.size()];
         for(int i = 0; i < ans.size(); i++)
             res[i] = ans.get(i);
+        return res;
+    }
+
+    /**
+     * 层序打印二叉树
+     *
+     * @param root 根节点
+     * @return 打印列表
+     */
+    public List<List<Integer>> levelOrder2(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        List<List<Integer>> res = new ArrayList<>();
+        if(root != null) queue.add(root);
+        while(!queue.isEmpty()) {
+            List<Integer> tmp = new ArrayList<>();
+            for(int i = queue.size(); i > 0; i--) {
+                TreeNode node = queue.poll();
+                tmp.add(node.val);
+                if(node.left != null) queue.add(node.left);
+                if(node.right != null) queue.add(node.right);
+            }
+            res.add(tmp);
+        }
         return res;
     }
 
