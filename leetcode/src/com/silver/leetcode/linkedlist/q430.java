@@ -1,4 +1,6 @@
-package com.silver.leetcode;
+package com.silver.leetcode.linkedlist;
+
+import com.silver.leetcode.Node;
 
 /**
  * 扁平化多级双向链表

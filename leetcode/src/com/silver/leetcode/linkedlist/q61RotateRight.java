@@ -1,4 +1,4 @@
-package com.silver.leetcode;
+package com.silver.leetcode.linkedlist;
 
 import com.silver.labuladong.temp.ListNode;
 
@@ -8,7 +8,7 @@ import com.silver.labuladong.temp.ListNode;
  * @author csh
  * @date 2021/2/21
  **/
-public class q61 {
+public class q61RotateRight {
 
     /**
      * 旋转链表
