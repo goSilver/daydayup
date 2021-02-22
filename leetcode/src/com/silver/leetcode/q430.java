@@ -1,7 +1,5 @@
 package com.silver.leetcode;
 
-import com.silver.leetcode.datastructure.Node;
-
 /**
  * 扁平化多级双向链表
  *

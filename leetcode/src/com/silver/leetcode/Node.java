@@ -1,4 +1,4 @@
-package com.silver.leetcode.datastructure;
+package com.silver.leetcode;
 
 /**
  * 双向链表节点
