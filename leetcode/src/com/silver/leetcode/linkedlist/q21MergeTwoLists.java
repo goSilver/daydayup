@@ -1,4 +1,4 @@
-package com.silver.leetcode;
+package com.silver.leetcode.linkedlist;
 
 import com.silver.labuladong.temp.ListNode;
 
