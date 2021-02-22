@@ -8,7 +8,7 @@ import com.silver.labuladong.temp.ListNode;
  * @author csh
  * @date 2021/2/22
  **/
-public class q21 {
+public class q21MergeTwoLists {
 
     /**
      * 思路：
