@@ -4,9 +4,9 @@ import com.silver.labuladong.temp.ListNode;
 
 /**
  * 给你两个 非空 链表来代表两个非负整数。数字最高位位于链表开始位置。它们的每个节点只存储一位数字。将这两数相加会返回一个新的链表。
- *
+ * <p>
  * 你可以假设除了数字 0 之外，这两个数字都不会以零开头。
- *
+ * <p>
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/add-two-numbers-ii
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
@@ -44,16 +44,13 @@ public class q445AddTwoNumbers {
         ListNode res = new ListNode(0);
         ListNode cur = res;
         // 保存进位数
-        int num = 0;
+        int carry = 0;
         // 处理 a+b+num 情况
         while (node1 != null && node2 != null) {
-            int sum = node1.val + node2.val + num;
-            if (sum >= 10) {
-                num = 1;
-                sum %= 10;
-            } else {
-                num = 0;
-            }
+            int sum = node1.val + node2.val + carry;
+            carry = sum / 10;
+            sum %= 10;
+
             cur.next = new ListNode(sum);
             cur = cur.next;
             node1 = node1.next;
@@ -62,21 +59,18 @@ public class q445AddTwoNumbers {
         // 处理 a+num 情况
         ListNode temp = node1 != null ? node1 : node2;
         while (temp != null) {
-            int sum = temp.val + num;
-            if (sum >= 10) {
-                num = 1;
-                sum %= 10;
-            } else {
-                num = 0;
-            }
+            int sum = temp.val + carry;
+            carry = sum / 10;
+            sum %= 10;
+
             cur.next = new ListNode(sum);
             cur = cur.next;
             temp = temp.next;
         }
 
         // 处理只剩num情况
-        if (num == 1) {
-            cur.next = new ListNode(num);
+        if (carry == 1) {
+            cur.next = new ListNode(carry);
         }
 
         // 删除工具头节点，再将链表反转一次就是结果
