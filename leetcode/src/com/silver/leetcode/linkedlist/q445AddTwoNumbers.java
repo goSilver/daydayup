@@ -2,6 +2,9 @@ package com.silver.leetcode.linkedlist;
 
 import com.silver.labuladong.temp.ListNode;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 /**
  * 给你两个 非空 链表来代表两个非负整数。数字最高位位于链表开始位置。它们的每个节点只存储一位数字。将这两数相加会返回一个新的链表。
  * <p>
@@ -30,7 +33,40 @@ public class q445AddTwoNumbers {
     }
 
     /**
-     * 两个链表相加
+     * 官方解法，用栈来解，不用改变原链表结构
+     *
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+        Deque<Integer> stack1 = new LinkedList<Integer>();
+        Deque<Integer> stack2 = new LinkedList<Integer>();
+        while (l1 != null) {
+            stack1.push(l1.val);
+            l1 = l1.next;
+        }
+        while (l2 != null) {
+            stack2.push(l2.val);
+            l2 = l2.next;
+        }
+        int carry = 0;
+        ListNode ans = null;
+        while (!stack1.isEmpty() || !stack2.isEmpty() || carry != 0) {
+            int a = stack1.isEmpty() ? 0 : stack1.pop();
+            int b = stack2.isEmpty() ? 0 : stack2.pop();
+            int cur = a + b + carry;
+            carry = cur / 10;
+            cur %= 10;
+            ListNode curnode = new ListNode(cur);
+            curnode.next = ans;
+            ans = curnode;
+        }
+        return ans;
+    }
+
+    /**
+     * 两个链表相加，自己写的暴力解法，反转链表后相加
      *
      * @param l1 链表1
      * @param l2 链表2
