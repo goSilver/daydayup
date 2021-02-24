@@ -15,7 +15,7 @@ public class q237DeleteNode {
      * 但是这道题，没有给head节点，而是只给了要删除的节点
      * 所以，只需要将节点node.next的val值和next指针复制过来即可
      *
-     * @param node
+     * @param node 要删除的节点
      */
     public void deleteNode(ListNode node) {
         node.val = node.next.val;
