@@ -18,7 +18,7 @@ public class q2AddTwoNumbers {
         while (l1 != null || l2 != null) {
             int a = l1 == null ? 0 : l1.val;
             int b = l2 == null ? 0 : l2.val;
-            int sum = a+b+carry;
+            int sum = a + b + carry;
             carry = sum / 10;
             sum %= 10;
 
@@ -32,7 +32,7 @@ public class q2AddTwoNumbers {
             if (l1 != null) l1 = l1.next;
             if (l2 != null) l2 = l2.next;
         }
-        if (carry>0) {
+        if (carry > 0) {
             tail.next = new ListNode(carry);
         }
         return head;
