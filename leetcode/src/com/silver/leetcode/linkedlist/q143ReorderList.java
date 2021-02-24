@@ -29,6 +29,7 @@ public class q143ReorderList {
     }
 
     private void merge(ListNode l1, ListNode l2) {
+        // 注意
         ListNode l1Temp;
         ListNode l2Temp;
         while (l1 != null && l2 != null) {
@@ -46,6 +47,7 @@ public class q143ReorderList {
 
     private ListNode reverse(ListNode head) {
         if (head == null || head.next == null) return head;
+        // 注意
         ListNode last = reverse(head.next);
         head.next.next = head;
         head.next = null;
@@ -54,6 +56,7 @@ public class q143ReorderList {
 
     private ListNode findMiddle(ListNode head) {
         ListNode fast = head, slow = head;
+        // 注意
         while (fast.next != null && fast.next.next != null) {
             fast = fast.next.next;
             slow = slow.next;
