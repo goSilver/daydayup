@@ -1,4 +1,4 @@
-package com.silver.leetcode.array;
+package com.silver.leetcode.array.binarysearch;
 
 /**
  * 爱吃香蕉的珂珂
