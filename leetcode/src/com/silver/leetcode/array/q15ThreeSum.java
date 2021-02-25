@@ -10,7 +10,7 @@ import java.util.List;
  * @author csh
  * @date 2021/2/22
  **/
-public class q15 {
+public class q15ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> res = new ArrayList<>();
