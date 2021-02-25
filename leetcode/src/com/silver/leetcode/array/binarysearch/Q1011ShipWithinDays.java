@@ -1,4 +1,4 @@
-package com.silver.leetcode.array;
+package com.silver.leetcode.array.binarysearch;
 
 /**
  * 在 D 天内送达包裹的能力
