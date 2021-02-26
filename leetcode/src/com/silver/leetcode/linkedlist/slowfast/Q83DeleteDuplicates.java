@@ -10,10 +10,12 @@ import com.silver.labuladong.temp.ListNode;
  **/
 public class Q83DeleteDuplicates {
     public ListNode deleteDuplicates(ListNode head) {
+        // base case
         if (head == null) return null;
 
         ListNode fast = head, slow = head;
         while (fast != null) {
+            // 注意
             if (fast.val != slow.val) {
                 slow.next = fast;
                 slow = slow.next;
