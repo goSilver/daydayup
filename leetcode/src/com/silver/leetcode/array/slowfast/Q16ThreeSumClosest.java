@@ -18,6 +18,15 @@ public class Q16ThreeSumClosest {
         System.out.println(res);
     }
 
+    /**
+     * 思路：
+     * 先对数组nums进行排序，然后再利用左右指针
+     * 找到最佳答案best
+     *
+     * @param nums 数组
+     * @param target 目标值
+     * @return 最接近的三数之和
+     */
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
 
