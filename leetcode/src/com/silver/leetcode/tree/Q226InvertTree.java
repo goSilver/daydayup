@@ -23,7 +23,7 @@ public class Q226InvertTree {
         invertTree(root.left);
         invertTree(root.right);
 
-        // 翻转
+        // 翻转（也可以放在前序遍历位置处）
         TreeNode temp = root.left;
         root.left = root.right;
         root.right = temp;
