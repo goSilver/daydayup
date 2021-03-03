@@ -21,7 +21,7 @@ public class Q116Connect {
         if (left == null || right == null) return;
 
         // 连接相同父节点的两个节点
-        left.next = right.next;
+        left.next = right;
 
         // 递归连接子节点的字节点
         connectTwoNode(left.left, left.right);
