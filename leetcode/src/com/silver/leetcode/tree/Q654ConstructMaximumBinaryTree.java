@@ -21,6 +21,7 @@ public class Q654ConstructMaximumBinaryTree {
 
     private TreeNode constructMaximumBinaryTree(int[] nums, int begin, int end) {
         if (begin >= end) return null;
+        // 寻找最大值
         int max = Integer.MIN_VALUE;
         int index = 0;
         for (int i = begin; i < end; i++) {
@@ -30,7 +31,7 @@ public class Q654ConstructMaximumBinaryTree {
             }
         }
         TreeNode root = new TreeNode(max);
-
+        // 递归调用构造左右子树
         root.left = constructMaximumBinaryTree(nums, begin, index);
         root.right = constructMaximumBinaryTree(nums, index+1, end);
 
