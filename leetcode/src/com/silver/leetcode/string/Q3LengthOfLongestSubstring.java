@@ -10,6 +10,12 @@ import java.util.HashMap;
  **/
 public class Q3LengthOfLongestSubstring {
 
+    /**
+     * 滑动窗口算法，不断向右尝试，寻找所有符合条件的窗口，并记录最大窗口
+     *
+     * @param s 字符串s
+     * @return 最长无重复的长度
+     */
     private int lengthOfLongestSubstring(String s) {
         HashMap<Character, Integer> window = new HashMap<>();
         int left = 0, right = 0;
