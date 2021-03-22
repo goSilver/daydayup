@@ -19,8 +19,10 @@ public class Q225MyStack2 {
 
     /** Push element x onto stack. */
     public void push(int x) {
+        // 注意，先获取size，再添加元素
         int size = queue.size();
         queue.offer(x);
+        // 利用循环，将队列中的元素反转
         for (int i = 0; i < size; i++) {
             queue.offer(queue.poll());
         }
