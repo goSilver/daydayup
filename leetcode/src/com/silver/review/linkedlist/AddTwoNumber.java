@@ -23,7 +23,7 @@ public class AddTwoNumber {
         ListNode head = new ListNode(0);
         ListNode cur = head;
         int carry = 0;
-        while (n1 != null || n2 != null) {
+        while (n1 != null || n2 != null || carry != 0) {
             int a = n1 == null ? 0 : n1.val;
             int b = n2 == null ? 0 : n2.val;
 
@@ -37,7 +37,7 @@ public class AddTwoNumber {
             if (n1 != null) n1 = n1.next;
             if (n2 != null) n2 = n2.next;
         }
-        if (carry > 0) cur.next = new ListNode(carry);
+        // if (carry > 0) cur.next = new ListNode(carry);
         return head.next;
     }
 
