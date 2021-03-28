@@ -6,7 +6,7 @@ package com.silver.leetcode.tree;
  * @author csh
  * @date 2021/3/3
  **/
-class Node {
+public class Node {
     public int val;
     public Node left;
     public Node right;
