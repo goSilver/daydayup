@@ -10,7 +10,7 @@
 - dubbo
 - framework
 - Java
-- mysql
+- MySQL
 - network
 - redis
 - work
