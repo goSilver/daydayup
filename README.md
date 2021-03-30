@@ -1,27 +1,28 @@
-### 后续需要整理的知识点
-#### 1、框架
-- Spring事务相关和实现原理
-- MyBatis
-- 
+### 目录
 
-#### 2、中间件
+#### 1、datastruture 
+计划是刷算法之前先过一遍数据解雇，用来存放学习数据结构时的代码和笔记，但是真正刷起算法来发现数据结构是顺便而来的事。
+
+目前还没有什么内容，忽略。
+
+#### 2、docs
+我的学习笔记，努力整理中。
 - dubbo
-- rocket MQ
-- 
-
-#### 3、数据库
-- 锁
-- SQL优化
-- 分库分表
-
-#### 4、缓存
+- framework
+- Java
+- mysql
+- network
 - redis
-- 分布式锁
+- work
 
-#### 5、JVM和Java SE
+#### 3、java
+计划是用来存放学习Java新特性、JVM等知识点。
 
-#### 6、Linux
+目前还没有什么内容，忽略。
 
-#### 7、计算机网络
-
-#### 8、leetCode
+#### 4、leetcode
+我的算法刷题之路，恶补算法ing。
+- easy：力扣中的easy难度的一些题目
+- labuladong：跟着公众号labuladong刷的一些题目
+- leetcode：力扣上的题目，按照题目类型分类整理
+- sword4offer：《剑指offer》中的题目
