@@ -1,4 +1,4 @@
-package com.silver.labuladong.doublepointer.leftright;
+package com.silver.labuladong.array.leftright;
 
 import java.util.ArrayList;
 import java.util.HashMap;

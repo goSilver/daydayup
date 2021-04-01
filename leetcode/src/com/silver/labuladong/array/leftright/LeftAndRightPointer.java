@@ -1,4 +1,4 @@
-package com.silver.labuladong.doublepointer.leftright;
+package com.silver.labuladong.array.leftright;
 
 /**
  * 双指针技巧之左右指针
