@@ -1,4 +1,4 @@
-package com.silver.labuladong.doublepointer.slowfast;
+package com.silver.labuladong.linklist.slowfast;
 
 import com.silver.labuladong.temp.ListNode;
 
