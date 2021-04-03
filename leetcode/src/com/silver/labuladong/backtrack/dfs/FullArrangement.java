@@ -70,7 +70,7 @@ public class FullArrangement {
     // 默写
     private List<List<Integer>> myPermute(int[] nums) {
         LinkedList<Integer> track = new LinkedList<>();
-        myBacktrack(nums, track);
+        backtrack(nums, track);
         return res;
     }
 
@@ -81,10 +81,11 @@ public class FullArrangement {
         }
 
         for (int num : nums) {
-            if (track.contains(num)) continue;
-
+            if (track.contains(num)) {
+                continue;
+            }
             track.add(num);
-            myBacktrack(nums, track);
+            backtrack(nums, track);
             track.removeLast();
         }
     }
