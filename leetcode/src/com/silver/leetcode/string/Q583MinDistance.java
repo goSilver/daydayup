@@ -11,7 +11,7 @@ package com.silver.leetcode.string;
  */
 public class Q583MinDistance {
 
-    private Q1143LongestCommonSubsequence helper;
+    private Q1143LongestCommonSubsequence helper = new Q1143LongestCommonSubsequence();
 
     public int minDistance(String s1, String s2) {
         int m = s1.length(), n = s2.length();
