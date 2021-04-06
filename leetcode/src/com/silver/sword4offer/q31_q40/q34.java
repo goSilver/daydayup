@@ -33,8 +33,8 @@ public class q34 {
             res.add(new LinkedList<>(path));
         }
         // 递归
-        pathSum(root.left, target);
-        pathSum(root.right, target);
+        recur(root.left, target);
+        recur(root.right, target);
         // 回溯
         path.removeLast();
     }
