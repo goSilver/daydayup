@@ -89,7 +89,7 @@ public class MySolution {
     public ListNode reverseBetween(ListNode a, ListNode b) {
         ListNode pre, cur, nxt;
         pre = null;
-        cur = nxt = null;
+        cur = nxt = a;
         while (cur != b) {
             nxt = cur.next;
             cur.next = pre;
