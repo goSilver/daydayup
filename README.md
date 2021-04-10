@@ -25,5 +25,6 @@
 - easy：力扣中的easy难度的一些题目
 - labuladong：跟着公众号labuladong刷的一些题目
 - leetcode：力扣上的题目，按照题目类型分类整理
-- review：复习算法用，隔一段时间会复习前一段时间学习的算法，默写一遍
+- review：复习算法用，隔一段时间会复习前一段时间学习的算法
+- smallgray：《程序员小灰》中的题目
 - sword4offer：《剑指offer》中的题目
