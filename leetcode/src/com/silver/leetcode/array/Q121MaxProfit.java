@@ -27,5 +27,27 @@ public class Q121MaxProfit {
         return maxprofit;
     }
 
+    public int maxProfit2(int[] prices) {
+        int maxPrice = 0;
+        for (int i = 0; i < prices.length; i++) {
+            for (int j = i; j < prices.length; j++) {
+                maxPrice = Math.max(prices[j] - prices[i], maxPrice);
+            }
+        }
+        return maxPrice;
+    }
+
+    public int maxProfit3(int[] prices) {
+        int maxProfit = 0;
+        int minPrice = Integer.MAX_VALUE;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minPrice) {
+                minPrice = prices[i];
+            } else if (prices[i] - minPrice > maxProfit) {
+                maxProfit = prices[i] - minPrice;
+            }
+        }
+        return maxProfit;
+    }
 
 }
