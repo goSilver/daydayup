@@ -122,4 +122,33 @@ public class LinkedList0410 {
         newTail.next = null;
         return newHead;
     }
+
+    public ListNode mergeTwoList(ListNode a, ListNode b) {
+        ListNode res = new ListNode(0);
+        ListNode cur = res;
+        while (a != null && b != null) {
+            if (a.val > b.val) {
+                res.next = b;
+                b = b.next;
+            } else {
+                res.next = a;
+                a = a.next;
+            }
+            cur = cur.next;
+        }
+
+        cur.next = a == null ? b : a;
+        return res.next;
+    }
+
+    public ListNode mergeKLists(ListNode[] lists) {
+        return merge(lists, 0, lists.length - 1);
+    }
+
+    private ListNode merge(ListNode[] lists, int l, int r) {
+        if (l == r) return lists[l];
+        if (l > r) return null;
+        int mid = (l + r) / 2;
+        return mergeTwoList(merge(lists, 0, mid), merge(lists, mid + 1, r));
+    }
 }
