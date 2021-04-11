@@ -22,7 +22,7 @@ public class Flatten {
         root.right = left;
 
         TreeNode p = root;
-        while (p != null) {
+        while (p.right != null) {
             p = p.right;
         }
         p.right = right;
