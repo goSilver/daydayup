@@ -12,7 +12,7 @@ public class Connect {
 
     public Node connect(Node root) {
         if (root == null) return null;
-        connect(root, root.right);
+        connect(root.left, root.right);
         return root;
     }
 
