@@ -3,31 +3,27 @@ package com.silver.review.linkedlist;
 import com.silver.labuladong.temp.ListNode;
 
 /**
- * 链表操作
- *
  * @author csh
- * @date 2021/4/10
+ * @date 2021/4/11
  */
-public class LinkedList0410 {
-    public ListNode reverseByRecurse(ListNode head) {
-        if (head == null || head.next == null) return head;
-        // 递归
-        ListNode last = reverseByRecurse(head.next);
-        // 反转
+public class LinkedList0411 {
+    public ListNode reverse(ListNode head) {
+        if (head == null) return null;
+        ListNode last = reverse(head.next);
         head.next.next = head;
         head.next = null;
         return last;
     }
 
-    public ListNode reverseByIteration(ListNode head) {
+    public ListNode reverseByInteration(ListNode head) {
         if (head == null) return null;
         ListNode pre = null;
-        ListNode cur = head, next;
+        ListNode cur = head, nxt;
         while (cur != null) {
-            next = cur.next;
+            nxt = cur.next;
             cur.next = pre;
             pre = cur;
-            cur = next;
+            cur = nxt;
         }
         return pre;
     }
@@ -35,14 +31,12 @@ public class LinkedList0410 {
     private ListNode successor;
 
     public ListNode reverseN(ListNode head, int n) {
-        if (head == null) return null;
         if (n == 1) {
             successor = head.next;
             return successor;
         }
         ListNode last = reverseN(head.next, n - 1);
         head.next.next = head;
-        // 注意，链接前后两部分链表
         head.next = successor;
         return last;
     }
@@ -56,9 +50,9 @@ public class LinkedList0410 {
     }
 
     public ListNode reverseBetween(ListNode a, ListNode b) {
-        ListNode pre, cur, nxt;
-        pre = null;
-        cur = nxt = a;
+        if (a == null) return null;
+        ListNode pre = null;
+        ListNode cur = a, nxt;
         while (cur != b) {
             nxt = cur.next;
             cur.next = pre;
@@ -69,15 +63,11 @@ public class LinkedList0410 {
     }
 
     public ListNode reverseKGroup(ListNode head, int k) {
-        if (head == null) return null;
-        ListNode a, b;
-        a = b = head;
+        ListNode a = head, b = head;
         for (int i = 0; i < k; i++) {
-            // 不足k个，无须反转
             if (b == null) return null;
             b = b.next;
         }
-
         ListNode newHead = reverseBetween(a, b);
         a.next = reverseKGroup(b, k);
         return newHead;
@@ -85,9 +75,9 @@ public class LinkedList0410 {
 
     public ListNode swapPairs(ListNode head) {
         if (head == null) return null;
-        ListNode ans = new ListNode(0);
-        ans.next = head;
-        ListNode pre = ans;
+        ListNode res = new ListNode(0);
+        res.next = head;
+        ListNode pre = res;
         while (head != null && head.next != null) {
             ListNode temp = head.next;
             pre.next = head.next;
@@ -97,12 +87,10 @@ public class LinkedList0410 {
             pre = head;
             head = head.next;
         }
-        return ans.next;
+        return res.next;
     }
 
     public ListNode rotateRight(ListNode head, int k) {
-        if (head == null) return null;
-        // 先连成环
         ListNode tail = head;
         int n = 1;
         while (tail.next != null) {
@@ -111,33 +99,29 @@ public class LinkedList0410 {
         }
         tail.next = head;
 
-        // 寻找新的头节点、尾节点
-        ListNode newTail = head;
         for (int i = 0; i < n - k % n - 1; i++) {
-            newTail = newTail.next;
+            head = head.next;
         }
-        // 新的头节点
-        ListNode newHead = newTail.next;
-        // 切断链表
+        ListNode newTail = head;
+        ListNode newHead = head.next;
         newTail.next = null;
         return newHead;
     }
 
-    public ListNode mergeTwoList(ListNode a, ListNode b) {
+    public ListNode mergeTwoLists(ListNode a, ListNode b) {
         ListNode res = new ListNode(0);
-        ListNode cur = res;
         while (a != null && b != null) {
-            if (a.val > b.val) {
-                res.next = b;
-                b = b.next;
-            } else {
+            if (a.val < b.val) {
                 res.next = a;
                 a = a.next;
+            } else {
+                res.next = b;
+                b = b.next;
             }
-            cur = cur.next;
+            res = res.next;
         }
 
-        cur.next = a == null ? b : a;
+        res.next = a != null ? a : b;
         return res.next;
     }
 
@@ -149,6 +133,6 @@ public class LinkedList0410 {
         if (l == r) return lists[l];
         if (l > r) return null;
         int mid = (l + r) / 2;
-        return mergeTwoList(merge(lists, 0, mid), merge(lists, mid + 1, r));
+        return mergeTwoLists(merge(lists, 0, mid), merge(lists, mid + 1, r));
     }
 }
