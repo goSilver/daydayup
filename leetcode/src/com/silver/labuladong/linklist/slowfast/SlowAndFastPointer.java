@@ -48,7 +48,7 @@ public class SlowAndFastPointer {
         fast = slow = head;
 
         // 遍历链表，找到快慢指针碰撞的位置
-        while (fast != null && fast.next != null) {
+        while (fast != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
 
