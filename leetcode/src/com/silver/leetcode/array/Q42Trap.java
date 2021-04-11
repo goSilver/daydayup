@@ -17,10 +17,10 @@ public class Q42Trap {
     public int trapA(int[] height) {
         if (height.length == 0) return 0;
         int res = 0;
-        for (int i = 0; i < height.length; i++) {
+        for (int i = 0; i < height.length-1; i++) {
             int lMax = 0, rMax = 0;
             // 注意，<=，需要把index为i的元素也算进来
-            for (int j = 0; j <= i; j++)
+            for (int j = i; j >= 0; j--)
                 lMax = Math.max(height[j], lMax);
 
             for (int j = i; j < height.length; j++)
