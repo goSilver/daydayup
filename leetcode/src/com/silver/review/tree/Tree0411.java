@@ -10,11 +10,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * 树
  * @author csh
  * @date 2021/4/11
  */
 public class Tree0411 {
 
+    // 反转二叉树
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
 
@@ -27,6 +29,7 @@ public class Tree0411 {
         return root;
     }
 
+    // 填充每个节点的下一个右侧节点指针
     public Node connect(Node root) {
         if (root == null) return null;
         connect(root.left, root.right);
@@ -43,6 +46,7 @@ public class Tree0411 {
         connect(a.right, b.left);
     }
 
+    // 二叉树展开为链表
     public void flattern(TreeNode root) {
         if (root == null) return;
 
@@ -62,6 +66,7 @@ public class Tree0411 {
         p.right = right;
     }
 
+    // 构造最大二叉树
     public TreeNode constructMaximumBinaryTree(int[] nums) {
         if (nums.length < 1) return null;
         return build(nums, 0, nums.length);
@@ -111,6 +116,7 @@ public class Tree0411 {
         return root;
     }
 
+    // 寻找最近公共祖先
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || p == root || q == root) return root;
         TreeNode left = lowestCommonAncestor(root.left, p, q);
@@ -122,6 +128,7 @@ public class Tree0411 {
 
     private HashMap<String, Integer> memo = new HashMap<>();
     private LinkedList<TreeNode> res = new LinkedList<>();
+    // 寻找重复子树
     private List<TreeNode> findDuplicateSubtrees(TreeNode root) {
         traverse(root);
         return res;
@@ -142,6 +149,7 @@ public class Tree0411 {
         return subTree;
     }
 
+    // 二叉搜索树中第K小的元素
     private int rank;
     private TreeNode kthRes;
     public void findKthInBST(TreeNode root, int k) {
@@ -155,6 +163,7 @@ public class Tree0411 {
         findKthInBST(root.right,k);
     }
 
+    // 把二叉搜索树转换为累加树
     public TreeNode greaterSumTree(TreeNode root) {
         doSum(root);
         return root;
@@ -168,6 +177,7 @@ public class Tree0411 {
         doSum(root.left);
     }
 
+    // 是否镜像二叉树
     public boolean isSymmetric(TreeNode root) {
         return check(root.left, root.right);
     }
