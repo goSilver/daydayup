@@ -3,6 +3,7 @@ package com.silver.review.linkedlist;
 import com.silver.labuladong.temp.ListNode;
 
 /**
+ * 链表
  * @author csh
  * @date 2021/4/11
  */
@@ -29,7 +30,7 @@ public class LinkedList0411 {
     }
 
     private ListNode successor;
-
+    // 反转前n个
     public ListNode reverseN(ListNode head, int n) {
         if (n == 1) {
             successor = head.next;
@@ -41,6 +42,7 @@ public class LinkedList0411 {
         return last;
     }
 
+    // 区间反转
     public ListNode reverseBetween(ListNode head, int m, int n) {
         if (m == 1) {
             reverseN(head, n);
@@ -49,6 +51,7 @@ public class LinkedList0411 {
         return head;
     }
 
+    // 区间反转
     public ListNode reverseBetween(ListNode a, ListNode b) {
         if (a == null) return null;
         ListNode pre = null;
@@ -62,6 +65,7 @@ public class LinkedList0411 {
         return pre;
     }
 
+    // k个一组反转
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode a = head, b = head;
         for (int i = 0; i < k; i++) {
@@ -73,6 +77,7 @@ public class LinkedList0411 {
         return newHead;
     }
 
+    // 两两交换
     public ListNode swapPairs(ListNode head) {
         if (head == null) return null;
         ListNode res = new ListNode(0);
@@ -90,6 +95,7 @@ public class LinkedList0411 {
         return res.next;
     }
 
+    // 旋转链表
     public ListNode rotateRight(ListNode head, int k) {
         ListNode tail = head;
         int n = 1;
@@ -108,6 +114,7 @@ public class LinkedList0411 {
         return newHead;
     }
 
+    // 合并两个链表
     public ListNode mergeTwoLists(ListNode a, ListNode b) {
         ListNode res = new ListNode(0);
         while (a != null && b != null) {
@@ -125,6 +132,7 @@ public class LinkedList0411 {
         return res.next;
     }
 
+    // 合并k个链表
     public ListNode mergeKLists(ListNode[] lists) {
         return merge(lists, 0, lists.length - 1);
     }
