@@ -1,7 +1,5 @@
 package com.silver.review.tree;
 
-
-import com.silver.labuladong.temp.ListNode;
 import com.silver.leetcode.tree.Node;
 import com.silver.sword4offer.TreeNode;
 
@@ -46,7 +44,14 @@ public class Tree0411 {
         connect(a.right, b.left);
     }
 
-    // 二叉树展开为链表
+    /**
+     * 二叉树展开为链表
+     * 在后续遍历处，利用临时节点保存left、right
+     * 将原树left置为null，right置为left
+     * 遍历找到新right的尾节点，链接新right和旧right
+     *
+     * @param root
+     */
     public void flattern(TreeNode root) {
         if (root == null) return;
 
