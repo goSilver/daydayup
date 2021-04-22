@@ -23,6 +23,7 @@
 ### 4、leetcode
 我的算法刷题之路，恶补算法ing。
 - easy：力扣中的easy难度的一些题目
+- gray：《漫画算法-小灰的算法之旅》题目实现
 - labuladong：跟着公众号labuladong刷的一些题目
 - leetcode：力扣上的题目，按照题目类型分类整理
 - review：复习算法用，隔一段时间会复习前一段时间学习的算法
