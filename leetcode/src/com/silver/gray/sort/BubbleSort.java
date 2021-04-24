@@ -2,6 +2,7 @@ package com.silver.gray.sort;
 
 /**
  * 冒泡的三种实现
+ *
  * @author csh
  * @date 2021/4/22
  */
@@ -90,6 +91,48 @@ public class BubbleSort {
             }
             // 更新边界
             sortedOrder = lastExchangeIndex;
+            if (isSorted) break;
+        }
+    }
+
+    /**
+     * 鸡尾酒排序
+     * 外层的大循环控制这所有排序回合
+     * 大循环包含两个小循环
+     * 第一个循环从左向右比较并交换元素
+     * 第二个循环从右向左比较并交换元素
+     *
+     * @param arr
+     */
+    private void sortFourth(int[] arr) {
+        int temp = 0;
+        for (int i = 0; i < arr.length / 2; i++) {
+            // 有序标记，每一轮的初始值都是true
+            boolean isSorted = true;
+            // 奇数轮，从左向右比较交换
+            for (int j = i; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    // 发生元素交换，就不再有序，标记变为false
+                    isSorted = false;
+                }
+            }
+            if (isSorted) break;
+
+            // 在偶数论之前，将isSorted标记为true
+            isSorted = true;
+            // 偶数轮，从右向左比较和交换
+            for (int j = arr.length - i - 1; j > i; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                    // 发生元素交换，有序标识变为false
+                    isSorted = false;
+                }
+            }
             if (isSorted) break;
         }
     }
