@@ -9,18 +9,14 @@ import com.silver.sword4offer.TreeNode;
  * @date 2021/4/5
  */
 public class Q124MaxPathSum {
-
     private int maxSum = Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
         maxGain(root);
         return maxSum;
     }
 
-    public int maxGain(TreeNode node) {
-        if (node == null) {
-            return 0;
-        }
-
+    private int maxGain(TreeNode node) {
+        if (node == null) return 0;
         // 递归计算左右子节点的最大贡献值
         // 只有在最大贡献值大于 0 时，才会选取对应子节点
         int leftGain = Math.max(maxGain(node.left), 0);
@@ -31,7 +27,6 @@ public class Q124MaxPathSum {
 
         // 更新答案
         maxSum = Math.max(maxSum, priceNewpath);
-
         // 返回节点的最大贡献值
         return node.val + Math.max(leftGain, rightGain);
     }
