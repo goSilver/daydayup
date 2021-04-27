@@ -9,7 +9,11 @@ import java.util.Arrays;
  * @date 2021/01/31
  **/
 public class CoinChange {
-
+    public static void main(String[] args) {
+        int[] coins = new int[]{1,2,5};
+        CoinChange main = new CoinChange();
+        main.coinChange(coins, 11);
+    }
     /**
      * 凑零钱
      *
@@ -19,6 +23,7 @@ public class CoinChange {
      */
     private int coinChange(int[] coins, int amount) {
         int max = amount + 1;
+        // dp数组的定义：当目标金额为i时，至少需要dp[i]枚硬币凑出
         int[] dp = new int[amount + 1];
         Arrays.fill(dp, max);
         dp[0] = 0;
