@@ -30,7 +30,7 @@ public class CheckInclusion {
             }
 
             // 注意循环条件。缩小窗口
-            if (right - left >= t.length()) {
+            while (right - left >= t.length()) {
                 // 已找到符合条件的字符个数
                 if (valid == t.length()) return true;
                 // 缩小窗口
