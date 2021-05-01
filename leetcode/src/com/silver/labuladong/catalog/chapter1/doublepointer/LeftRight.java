@@ -38,7 +38,7 @@ public class LeftRight {
                 right = mid;
             }
         }
-        return left;
+        return left - 1;// 注意
     }
 
     // 反转数组
