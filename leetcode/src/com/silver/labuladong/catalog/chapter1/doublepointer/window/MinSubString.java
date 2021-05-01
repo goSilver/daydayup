@@ -38,7 +38,7 @@ public class MinSubString {
                 if (window.get(c).equals(need.get(c))) valid++;
             }
             // 2、当valid等于need的size时，缩小左侧窗口
-            if (valid == need.size()) {
+            while (valid == need.size()) {
                 // 寻找最优解的控制
                 if (right - left < len) {
                     start = left;
