@@ -26,6 +26,7 @@ public class CoinChange {
         // dp数组的定义：当目标金额为i时，至少需要dp[i]枚硬币凑出
         int[] dp = new int[amount + 1];
         Arrays.fill(dp, max);
+        // 注意
         dp[0] = 0;
         // 外层循环遍历所有状态的所有取值
         for (int i = 1; i <= amount; i++) {
@@ -37,6 +38,7 @@ public class CoinChange {
                 dp[i] = Math.min(dp[i], dp[i - coin] + 1);
             }
         }
+        // 注意
         return dp[amount] > amount ? -1 : dp[amount];
     }
 }
