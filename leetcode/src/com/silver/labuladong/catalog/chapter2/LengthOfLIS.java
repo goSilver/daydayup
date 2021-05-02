@@ -23,6 +23,7 @@ public class LengthOfLIS {
         int[] dp = new int[arr.length];
         // dp[i]的初始值为1，因为以nums[i]结尾的的最长递增子序列起码要包含自己
         Arrays.fill(dp, 1);
+        // 状态转移
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < i; j++) {
                 dp[i] = Math.max(dp[i], dp[j] + 1);
