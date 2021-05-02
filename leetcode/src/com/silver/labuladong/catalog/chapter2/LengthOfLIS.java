@@ -3,7 +3,7 @@ package com.silver.labuladong.catalog.chapter2;
 import java.util.Arrays;
 
 /**
- * 最长递增子序列
+ * 最长递增子序列（Longest Increasing Subsequence）
  * 一维：
  * 二维：信封嵌套问题
  * 三维：
