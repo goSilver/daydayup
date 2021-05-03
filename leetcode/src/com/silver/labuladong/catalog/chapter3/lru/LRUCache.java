@@ -20,11 +20,47 @@ public class LRUCache {
     }
 
     /**
+     * 获取一个元素
+     *
+     * @param key 待获取的key
+     * @return 返回值
+     */
+    public int get(int key) {
+        // 如果不存在这个key，返回-1
+        if (!map.containsKey(key)) return -1;
+        Node node = map.get(key);
+        return node.val;
+    }
+
+    /**
+     * 插入一个元素
+     *
+     * @param key 待插入元素的key
+     * @param val 待插入元素的value
+     */
+    public void put(int key, int val) {
+        // 如果已存在这个key
+        if (map.containsKey(key)) {
+            // 先删
+            deletedKey(key);
+            // 添加为最近使用的元素
+            addRecently(key, val);
+        }
+        // 如果容量不够了
+        if (capacity == cache.size()) {
+            // 删除最久未使用的元素
+            removeLastRecently();
+        }
+        // 添加为最近使用的元素
+        addRecently(key, val);
+    }
+
+    /**
      * 将某个key提升为最近使用的
      *
      * @param key 待提升的key
      */
-    private void makeRecently(int key){
+    private void makeRecently(int key) {
         Node x = map.get(key);
         // 先从链表中删除这个节点
         cache.remove(x);
@@ -35,11 +71,11 @@ public class LRUCache {
     /**
      * 添加最近使用的元素
      *
-     * @param key 待添加元素的key
+     * @param key   待添加元素的key
      * @param value 待添加元素的value
      */
-    private void addRecently(int key, int value){
-        Node x = new Node(key,value);
+    private void addRecently(int key, int value) {
+        Node x = new Node(key, value);
         // 将元素添加到队尾
         cache.addLast(x);
         // 在map中添加映射关系
