@@ -15,9 +15,11 @@ public class Q003_LongestSubstring {
             char c1 = s.charAt(right);
             right++;
             window.put(c1, window.getOrDefault(c1, 0) + 1);
-            if (window.get(c1) > 1) {
+            // while!!! 判断是否应该收缩左边窗口
+            while (window.get(c1) > 1) {
+                char c2 = s.charAt(left);
                 left++;
-                window.put(c1, window.getOrDefault(c1, 0) - 1);
+                window.put(c2, window.getOrDefault(c2, 0) - 1);
             }
             res = Math.max(res, right - left);
         }
