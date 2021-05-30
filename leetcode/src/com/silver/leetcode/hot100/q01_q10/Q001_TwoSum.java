@@ -1,4 +1,4 @@
-package com.silver.leetcode.hot100;
+package com.silver.leetcode.hot100.q01_q10;
 
 import java.util.Arrays;
 import java.util.HashMap;
