@@ -19,13 +19,19 @@ import java.util.LinkedList;
  **/
 public class q445AddTwoNumbers {
     public static void main(String[] args) {
-        ListNode a = new ListNode(5);
-        ListNode b = new ListNode(6);
-        ListNode x = new ListNode(7);
-        ListNode y = new ListNode(8);
-
+        ListNode a = new ListNode(2);
+        ListNode b = new ListNode(4);
+        ListNode c = new ListNode(9);
+        ListNode x = new ListNode(5);
+        ListNode y = new ListNode(6);
+        ListNode z = new ListNode(4);
+        ListNode z1 = new ListNode(9);
         a.next = b;
+        b.next = c;
+
         x.next = y;
+        y.next= z;
+        z.next=z1;
         q445AddTwoNumbers add = new q445AddTwoNumbers();
         // 56+78
         ListNode res = add.addTwoNumbers(a, x);
