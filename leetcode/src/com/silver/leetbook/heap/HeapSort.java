@@ -7,7 +7,16 @@ package com.silver.leetbook.heap;
  * @date 2021/6/14
  **/
 public class HeapSort {
-    public static void heapSort(int[] arr) {
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{1,3,2,4};
+        heapSort(arr);
+        for (int i : arr) {
+            System.out.print(i);
+        }
+    }
+
+    private static void heapSort(int[] arr) {
         // 1.构建大顶堆
         for (int i = arr.length / 2 - 1; i >= 0; i--) {
             // 从第一个非叶子结点从下至上，从右至左调整结构
