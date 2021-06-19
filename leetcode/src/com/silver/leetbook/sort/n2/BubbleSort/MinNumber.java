@@ -39,7 +39,7 @@ public class MinNumber {
             for (int j = 0; j < arr.length - 1 - i; j++) {
                 String xy = arr[j] + arr[j + 1];
                 String yx = arr[j + 1] + arr[j];
-                if (Integer.parseInt(xy) > Integer.parseInt(yx)) {
+                if (Long.parseLong(xy) > Long.parseLong(yx)) {
                     swap(arr, j, j + 1);
                 }
             }
