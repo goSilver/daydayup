@@ -1,5 +1,7 @@
 package com.silver.sword4offer.q21_q30;
 
+import java.util.Arrays;
+
 /**
  * 调整数组顺序使奇数位于偶数前面
  *
@@ -7,6 +9,13 @@ package com.silver.sword4offer.q21_q30;
  * @date 2021/2/17
  **/
 public class q21 {
+
+    public static void main(String[] args) {
+        q21 main = new q21();
+        int[] arr = new int[]{1,2,3,4};
+        int[] res = main.exchange2(arr);
+        System.out.print(Arrays.toString(res));
+    }
     /**
      * 力扣上的优雅写法
      *
@@ -21,7 +30,7 @@ public class q21 {
                 continue;
             }
             if (isEven(nums[right])) {
-                right++;
+                right--;
                 continue;
             }
             swap(nums, left, right);
