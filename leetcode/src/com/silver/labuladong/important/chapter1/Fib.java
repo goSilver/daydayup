@@ -10,7 +10,7 @@ public class Fib {
         if (n == 0 )return 0;
         if (n == 1 || n==2) return 1;
         int pre = 1, cur = 1;
-        for (int i = 3; i < n; i++) {
+        for (int i = 3; i <= n; i++) {
             int sum = pre + cur;
             pre = cur;
             cur = sum;
