@@ -1,4 +1,4 @@
-package com.silver.leetbook.sort.n2;
+package com.silver.leetbook.sort.n2.BubbleSort;
 
 /**
  * 冒泡排序
