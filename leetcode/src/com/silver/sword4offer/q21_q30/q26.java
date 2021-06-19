@@ -11,7 +11,7 @@ import com.silver.labuladong.tree.TreeNode;
 public class q26 {
     public boolean isSubStructure(TreeNode A, TreeNode B) {
         return (A != null && B != null) &&
-                (recur(A, B) || isSubStructure(A.getLeft(), B) || isSubStructure(A.getLeft(), B));
+                (recur(A, B) || isSubStructure(A.getLeft(), B) || isSubStructure(A.getRight(), B));
     }
 
     boolean recur(TreeNode A, TreeNode B) {
