@@ -28,10 +28,16 @@ public class q32 {
         three.left = six;
         three.right = five;
         q32 q = new q32();
-        int[] res = q.levelOrder(one);
-        for (int re : res) {
-            System.out.print(re+" ");
-        }
+//        int[] res = q.levelOrder(one);
+//        for (int re : res) {
+//            System.out.print(re+" ");
+//        }
+        List<List<Integer>> lists = q.levelOrder2(one);
+        lists.forEach(o -> {
+            o.forEach(System.out::print);
+            System.out.println();
+        });
+
     }
 
     /**
@@ -68,6 +74,11 @@ public class q32 {
         if(root != null) queue.add(root);
         while(!queue.isEmpty()) {
             List<Integer> tmp = new ArrayList<>();
+            /*
+             * 注意这里的循环写法。等价于
+             * int sz = queue.size();
+             * for(int i = 0; i < sz; i++) {
+             */
             for(int i = queue.size(); i > 0; i--) {
                 TreeNode node = queue.poll();
                 tmp.add(node.val);
