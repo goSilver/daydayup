@@ -11,7 +11,7 @@ public class q42_MaxSubArray {
         int res = arr[0];
         for (int i = 1; i < arr.length; i++) {
             arr[i] += Math.max(arr[i - 1], 0);
-            res += Math.max(res, arr[i]);
+            res = Math.max(res, arr[i]);
         }
         return res;
     }
