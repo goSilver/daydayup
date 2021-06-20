@@ -44,7 +44,7 @@ public class q57_TwoSum {
                 // 缩小窗口
             } else if (sum > target) {
                 sum -= left;
-                left--;
+                left++;
             } else {
                 // 记录结果
                 int[] arr = new int[right - left];
