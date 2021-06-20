@@ -47,17 +47,19 @@ public class q32 {
      * @return 层序
      */
     public int[] levelOrder(TreeNode root) {
-        if(root == null) return new int[0];
-        Queue<TreeNode> queue = new LinkedList(){{ add(root); }};
+        if (root == null) return new int[0];
+        Queue<TreeNode> queue = new LinkedList() {{
+            add(root);
+        }};
         ArrayList<Integer> ans = new ArrayList<>();
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
             ans.add(node.val);
-            if(node.left != null) queue.add(node.left);
-            if(node.right != null) queue.add(node.right);
+            if (node.left != null) queue.add(node.left);
+            if (node.right != null) queue.add(node.right);
         }
         int[] res = new int[ans.size()];
-        for(int i = 0; i < ans.size(); i++)
+        for (int i = 0; i < ans.size(); i++)
             res[i] = ans.get(i);
         return res;
     }
@@ -71,23 +73,49 @@ public class q32 {
     public List<List<Integer>> levelOrder2(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         List<List<Integer>> res = new ArrayList<>();
-        if(root != null) queue.add(root);
-        while(!queue.isEmpty()) {
+        if (root != null) queue.add(root);
+        while (!queue.isEmpty()) {
             List<Integer> tmp = new ArrayList<>();
             /*
              * 注意这里的循环写法。等价于
              * int sz = queue.size();
              * for(int i = 0; i < sz; i++) {
              */
-            for(int i = queue.size(); i > 0; i--) {
+            for (int i = queue.size(); i > 0; i--) {
                 TreeNode node = queue.poll();
                 tmp.add(node.val);
-                if(node.left != null) queue.add(node.left);
-                if(node.right != null) queue.add(node.right);
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
             }
             res.add(tmp);
         }
         return res;
     }
 
+    /**
+     * 之字型打印二叉树
+     *
+     * @param root
+     * @return
+     */
+    public List<List<Integer>> levelOrder3(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        List<List<Integer>> res = new ArrayList<>();
+        if (root != null) queue.add(root);
+        while (!queue.isEmpty()) {
+            LinkedList<Integer> tmp = new LinkedList<>();
+            for (int i = queue.size(); i > 0; i--) {
+                TreeNode node = queue.poll();
+                if (res.size() % 2 == 0) {
+                    tmp.addLast(node.val);
+                } else {
+                    tmp.addFirst(node.val);
+                }
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
+            }
+            res.add(tmp);
+        }
+        return res;
+    }
 }
