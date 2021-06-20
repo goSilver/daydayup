@@ -49,7 +49,7 @@ public class q57_TwoSum {
                 // 记录结果
                 int[] arr = new int[right - left];
                 for (int i = left; i < right; i++) {
-                    arr[left - i] = left;
+                    arr[i - left] = i;
                 }
                 res.add(arr);
                 // 缩小窗口
