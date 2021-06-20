@@ -20,4 +20,14 @@ public class q58_ReverseWords {
         return res.toString().trim(); // 转化为字符串并返回
     }
 
+    /**
+     * 左旋转字符串
+     * @param s
+     * @param n
+     * @return
+     */
+    public String reverseLeftWords(String s, int n) {
+        return s.substring(n, s.length()) + s.substring(0, n);
+    }
+
 }
