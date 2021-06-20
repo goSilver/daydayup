@@ -1,5 +1,6 @@
 package com.silver.labuladong.backtrack.dfs;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class FullArrangement {
     }
 
     private List<List<Integer>> res = new LinkedList<>();
-
+    private boolean[] vis;
     /**
      * 主函数，输入一组不重复的数字，返回它们的全排列
      *
@@ -34,6 +35,9 @@ public class FullArrangement {
     private List<List<Integer>> permute(int[] nums) {
         // 记录「路径」
         LinkedList<Integer> track = new LinkedList<>();
+        vis = new boolean[nums.length];
+        // 对原数组排序，保证相同的数字都相邻
+        Arrays.sort(nums);
         backtrack(nums, track);
         return res;
     }
@@ -54,15 +58,21 @@ public class FullArrangement {
             return;
         }
 
-        for (int num : nums) {
-            // 排除不合法的选择
-            if (track.contains(num))
+        for (int i = 0; i < nums.length; i++) {
+            /*
+             * 排除不合法的选择
+             * 加上 !vis[i - 1]来去重主要是通过限制一下两个相邻的重复数字的访问顺序
+             * 对原数组排序，保证相同的数字都相邻，然后每次填入的数一定是这个数所在重复数集合中「从左往右第一个未被填过的数字」
+             */
+            if (vis[i] || (i>0 && nums[i] == nums[i-1]&& !vis[i-1]))
                 continue;
             // 做选择
-            track.add(num);
+            track.add(nums[i]);
+            vis[i] = true;
             // 进入下一层决策树
             backtrack(nums, track);
             // 取消选择
+            vis[i] = false;
             track.removeLast();
         }
     }
