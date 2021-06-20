@@ -31,4 +31,24 @@ public class q53_Search {
         }
         return i;
     }
+
+    /**
+     * 0～n-1中缺失的数字
+     *
+     * @param nums
+     * @return
+     */
+    public int missingNumber(int[] nums) {
+        int i = 0;
+        int j = nums.length - 1;
+        while (i <= j) {
+            int mid = (i + j) / 2;
+            if (nums[mid] != mid) {
+                j = mid - 1;
+            } else {
+                i = mid + 1;
+            }
+        }
+        return i;
+    }
 }
