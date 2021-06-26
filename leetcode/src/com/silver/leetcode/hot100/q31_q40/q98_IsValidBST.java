@@ -10,10 +10,10 @@ import com.silver.sword4offer.TreeNode;
  **/
 public class q98_IsValidBST {
     public boolean isValidBST(TreeNode root) {
-        return helper(root.left, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        return helper(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    private boolean helper(TreeNode root, int min, int max) {
+    private boolean helper(TreeNode root, long min, long max) {
         if (root == null) return true;
         if (root.val < min || root.val > max)
             return false;
