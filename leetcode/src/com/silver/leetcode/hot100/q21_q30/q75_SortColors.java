@@ -52,7 +52,8 @@ public class q75_SortColors {
 
     public void sortColors3(int[] nums) {
         int p0 = 0, p2 = nums.length - 1;
-        for (int i = 0; i < nums.length - 1; i++) {
+        // 注意
+        for (int i = 0; i <= p2; i++) {
             // 注意
             while (i <= p2 && nums[i] == 2) {
                 int tmp = nums[i];
