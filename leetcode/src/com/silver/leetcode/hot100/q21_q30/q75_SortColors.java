@@ -54,7 +54,7 @@ public class q75_SortColors {
         int p0 = 0, p2 = nums.length - 1;
         for (int i = 0; i < nums.length - 1; i++) {
             // 注意
-            if (i <= p2 && nums[i] == 2) {
+            while (i <= p2 && nums[i] == 2) {
                 int tmp = nums[i];
                 nums[i] = nums[p2];
                 nums[p2] = tmp;
