@@ -37,17 +37,18 @@ public class CycleList {
      * @return 环的起始节点
      */
     private ListNode getCycleHead(ListNode head) {
-        ListNode slow = head, fast = head;
-        while (fast != null && fast.next != null) {
+        ListNode slow = head;
+        ListNode fast = head;
+        do {
+            if (fast == null || fast.next == null) return null;
             slow = slow.next;
             fast = fast.next.next;
-            if (slow == fast) break;
-        }
+        } while (slow != fast);
 
         slow = head;
         while (slow != fast) {
-            fast = fast.next;
             slow = slow.next;
+            fast = fast.next;
         }
         return slow;
     }
