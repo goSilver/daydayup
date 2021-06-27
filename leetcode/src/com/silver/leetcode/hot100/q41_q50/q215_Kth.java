@@ -8,7 +8,7 @@ public class q215_Kth {
     public int findKthLargest(int[] nums, int k) {
         int[] minHeap = new int[k];
         System.arraycopy(nums, 0, minHeap, 0, k);
-        for (int i = (int) Math.floor(k / 2); i >= 0; i--) {
+        for (int i = k / 2; i >= 0; i--) {
             heapify(minHeap, i, k);
         }
 
