@@ -19,7 +19,7 @@ public class LengthOfLongestSubstring {
             right++;
             window.put(c1, window.getOrDefault(c1, 0) + 1);
             // 当出现重复字符，缩小窗口
-            if (window.get(c1) > 1) {
+            while (window.get(c1) > 1) {
                 char c2 = s.charAt(left);
                 left++;
                 window.put(c2, window.getOrDefault(c2, 0) - 1);
