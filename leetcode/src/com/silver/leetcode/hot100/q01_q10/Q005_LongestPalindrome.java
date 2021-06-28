@@ -33,4 +33,11 @@ public class Q005_LongestPalindrome {
         }
         return str.substring(l + 1, r);
     }
+
+    public static void main(String[] args) {
+        String s = "babad";
+        Q005_LongestPalindrome main = new Q005_LongestPalindrome();
+        String s1 = main.longestPalindrome(s);
+        System.out.println(s1);
+    }
 }
