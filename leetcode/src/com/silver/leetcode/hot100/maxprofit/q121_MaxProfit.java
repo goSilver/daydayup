@@ -1,4 +1,4 @@
-package com.silver.leetcode.hot100.q31_q40;
+package com.silver.leetcode.hot100.maxprofit;
 
 /**
  * @author csh
