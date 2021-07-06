@@ -1,10 +1,10 @@
-package com.silver.leetcode.hot100.q01_q10;
+package com.silver.leetcode.hot100.q11_q20;
 
 /**
  * @author csh
  * @date 2021/5/30
  **/
-public class Q033_Search {
+public class q33_Search {
 
     /**
      * 旋转数组中寻找一个数
