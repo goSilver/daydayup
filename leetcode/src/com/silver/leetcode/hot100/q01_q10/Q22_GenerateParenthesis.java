@@ -10,7 +10,7 @@ import java.util.List;
  * @author csh
  * @date 2021/2/6
  **/
-public class q22_GenerateParenthesis {
+public class Q22_GenerateParenthesis {
 
     /**
      * 括号生成
