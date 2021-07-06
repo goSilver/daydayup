@@ -31,15 +31,15 @@ public class Q015_ThreeSum {
                 if (sum == 0) {
                     res.add(new ArrayList<>(Arrays.asList(nums[i], nums[left], nums[right])));
                     // 注意
-                    while (left < right && nums[left] == nums[++left]) ;
-                    while (left < right && nums[right] == nums[--right]) ;
+                    while (left < right && nums[left] == nums[++left]);
+                    while (left < right && nums[right] == nums[--right]);
 
                 } else if (sum > 0) {
                     // 注意
-                    while (left < right && nums[right] == nums[--right]) ;
+                    while (left < right && nums[right] == nums[--right]);
                 } else if (sum < 0) {
                     // 注意
-                    while (left < right && nums[left] == nums[++left]) ;
+                    while (left < right && nums[left] == nums[++left]);
                 }
             }
         }
@@ -59,12 +59,12 @@ public class Q015_ThreeSum {
                 if (sum == 0) {
                     res.add(new ArrayList<>(Arrays.asList(arr[i], arr[left], arr[right])));
 
-                    while (left < right && arr[left] == arr[++left]) ;
-                    while (left < right && arr[right] == arr[--right]) ;
+                    while (left < right && arr[left] == arr[++left]);
+                    while (left < right && arr[right] == arr[--right]);
                 } else if (sum > 0) {
-                    while (left < right && arr[right] == arr[--right]) ;
+                    while (left < right && arr[right] == arr[--right]);
                 } else if (sum < 0) {
-                    while (left < right && arr[left] == arr[++left]) ;
+                    while (left < right && arr[left] == arr[++left]);
                 }
             }
         }
