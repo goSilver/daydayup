@@ -4,7 +4,7 @@ package com.silver.leetcode.hot100.q11_q20;
  * @author csh
  * @date 2021/5/30
  **/
-public class Q034_SerchRange {
+public class q34_SerchRange {
     /**
      *  在排序数组中查找元素的第一个和最后一个位置
      * @param nums
