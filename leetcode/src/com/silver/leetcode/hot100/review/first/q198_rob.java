@@ -30,4 +30,15 @@ public class q198_rob {
         }
         return Math.max(rob[nums.length - 1][0], rob[nums.length - 1][1]);
     }
+
+    public int rob3(int[] nums) {
+        int pre = 0, cur = 0, tmp;
+        for(int num : nums) {
+            tmp = cur;
+            cur = Math.max(pre + num, cur);
+            pre = tmp;
+        }
+        return cur;
+    }
+
 }
