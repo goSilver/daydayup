@@ -18,7 +18,7 @@ public class q337_rob {
         if (root == null) return new int[]{0, 0};
         int[] l = dfs(root.left);
         int[] r = dfs(root.right);
-        int select = root.val + l[0] + r[0];
+        int select = root.val + l[1] + r[1];
         int notSel = Math.max(l[0], l[1]) + Math.max(r[0], r[1]);
         return new int[]{select, notSel};
     }
