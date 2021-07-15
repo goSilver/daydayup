@@ -1,4 +1,4 @@
-package com.silver.leetcode.hot100.q61_q100;
+package com.silver.leetcode.hot100.q61_q70;
 
 import java.util.Stack;
 
