@@ -15,7 +15,8 @@ public class q300_lengthOfLIS {
 
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < i; j++) {
-                dp[i] = Math.max(dp[i], dp[j] + 1);
+                if (nums[i] > nums[j])
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
             }
         }
 
