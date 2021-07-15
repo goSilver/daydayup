@@ -1,4 +1,4 @@
-package com.silver.leetcode.hot100.q51_q60;
+package com.silver.leetcode.hot100.q71_q80;
 
 import java.util.Arrays;
 
