@@ -4,10 +4,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Logger {
+public class Logger0 {
     private final FileWriter fileWriter;
 
-    public Logger() throws IOException {
+    public Logger0() throws IOException {
         File file = new File("/Users/goku/log.txt");
         fileWriter = new FileWriter(file, true);
     }
@@ -40,7 +40,7 @@ public class Logger {
          * 要想解决这个问题也不难，我们只需要把对象级别的锁，换成类级别的锁就可以了。
          * 让所有的对象都共享同一把锁。这样就避免了不同对象之间同时调用 log() 函数，而导致的日志覆盖问题。
          */
-        synchronized (Logger.class) {
+        synchronized (Logger0.class) {
             fileWriter.write(msg);
         }
 
@@ -50,7 +50,7 @@ public class Logger {
 
 // Logger类的应用示例：
 class UserController {
-    private final Logger logger = new Logger();
+    private final Logger0 logger = new Logger0();
 
     public UserController() throws IOException {
     }
@@ -62,7 +62,7 @@ class UserController {
 }
 
 class OrderController {
-    private final Logger logger = new Logger();
+    private final Logger0 logger = new Logger0();
 
     public OrderController() throws IOException {
     }
