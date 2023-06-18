@@ -1,4 +1,4 @@
-package designpattern.proxy.dynamicproxy.cglib;
+package designPattern.proxy.dynamicproxy.cglib;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;

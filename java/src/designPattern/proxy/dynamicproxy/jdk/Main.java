@@ -1,7 +1,7 @@
-package designpattern.proxy.dynamicproxy.jdk;
+package designPattern.proxy.dynamicproxy.jdk;
 
-import designpattern.proxy.staticproxy.RealSubject;
-import designpattern.proxy.staticproxy.Subject;
+import designPattern.proxy.staticproxy.RealSubject;
+import designPattern.proxy.staticproxy.Subject;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

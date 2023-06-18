@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7e61ae35-6c47-47f0-9d0f-05ba95022ecc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_parttern/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_parttern/src/com/silver/a_single_instance/example_1/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_parttern/src/com/silver/a_single_instance/single/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java/src/designPattern/factory/Simple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/dynamicproxy/cglib/CGlibSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/dynamicproxy/cglib/CGlibSubject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/dynamicproxy/cglib/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/dynamicproxy/cglib/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/dynamicproxy/jdk/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/dynamicproxy/jdk/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/staticproxy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/staticproxy/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/staticproxy/ProxySubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/staticproxy/ProxySubject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/staticproxy/RealSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/staticproxy/RealSubject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/staticproxy/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/staticproxy/Subject.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2NotWhLDli4ytnzYVCju8NXyUyP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "/Users/goku/Documents/study/java/daydayup"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7e61ae35-6c47-47f0-9d0f-05ba95022ecc" name="Changes" comment="" />
+      <created>1680342296040</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680342296040</updated>
+    </task>
+    <servers />
+  </component>
+</project>

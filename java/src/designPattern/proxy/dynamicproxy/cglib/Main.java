@@ -1,6 +1,6 @@
-package designpattern.proxy.dynamicproxy.cglib;
+package designPattern.proxy.dynamicproxy.cglib;
 
-import designpattern.proxy.staticproxy.RealSubject;
+import designPattern.proxy.staticproxy.RealSubject;
 
 /**
  * @author csh

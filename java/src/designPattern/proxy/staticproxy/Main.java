@@ -1,4 +1,4 @@
-package designpattern.proxy.staticproxy;
+package designPattern.proxy.staticproxy;
 
 /**
  * @author csh
