@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e61ae35-6c47-47f0-9d0f-05ba95022ecc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/design_parttern/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/design_parttern/src/com/silver/a_single_instance/example_1/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/design_parttern/src/com/silver/a_single_instance/single/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java/src/designPattern/factory/Simple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/dynamicproxy/cglib/CGlibSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/dynamicproxy/cglib/CGlibSubject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/dynamicproxy/cglib/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/dynamicproxy/cglib/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/dynamicproxy/jdk/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/dynamicproxy/jdk/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/staticproxy/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/staticproxy/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/staticproxy/ProxySubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/staticproxy/ProxySubject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/staticproxy/RealSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/staticproxy/RealSubject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/designpattern/proxy/staticproxy/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/src/designPattern/proxy/staticproxy/Subject.java" afterDir="false" />
+    <list default="true" id="7e61ae35-6c47-47f0-9d0f-05ba95022ecc" name="Changes" comment="add:单例模式">
+      <change afterPath="$PROJECT_DIR$/design_parttern/src/com/silver/b_factory/InvalidRuleConfigException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_parttern/src/com/silver/b_factory/RuleConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design_parttern/src/com/silver/b_factory/SimpleFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +45,11 @@
     "last_opened_file_path": "/Users/goku/Documents/study/java/daydayup"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.silver.b_factory" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -64,6 +59,26 @@
       <option name="presentableId" value="Default" />
       <updated>1680342296040</updated>
     </task>
+    <task id="LOCAL-00001" summary="add:日志单例案例">
+      <created>1687071171045</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687071171045</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add:单例模式">
+      <created>1687076230513</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687076230513</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add:日志单例案例" />
+    <MESSAGE value="add:单例模式" />
+    <option name="LAST_COMMIT_MESSAGE" value="add:单例模式" />
   </component>
 </project>
